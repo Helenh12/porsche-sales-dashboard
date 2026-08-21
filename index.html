@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Porsche Sales Intelligence &mdash; Relatorio Executivo de Vendas</title>
+<meta name="description" content="Relatorio executivo de vendas Porsche: indicadores, comparativos, tendencias e insights para apoio a decisao comercial.">
+<style>
+:root{
+  color-scheme: dark;
+  --bg: #0b0c0e;
+  --bg-plane: #08090a;
+  --surface-1: #17191c;
+  --surface-2: #1f2226;
+  --surface-3: #26292e;
+  --text-primary: #f5f5f2;
+  --text-secondary: #a9adb2;
+  --text-muted: #6f737a;
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.14);
+  --accent: #E4002B;
+  --accent-soft: rgba(228,0,43,0.14);
+  --accent-line: rgba(228,0,43,0.55);
+  --gold: #C69632;
+  --good: #17b34a;
+  --warning: #fab219;
+  --critical: #e6473f;
+  --grid: rgba(255,255,255,0.07);
+  --radius-card: 14px;
+  --radius-sm: 8px;
+  font-size: 16px;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+a{color:inherit;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1320px;margin:0 auto;padding:0 28px;}
+
+/* ---------- Topbar ---------- */
+.topbar{
+  position: sticky; top:0; z-index: 50;
+  background: rgba(11,12,14,0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner{
+  max-width:1320px;margin:0 auto;padding:14px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{
+  width:34px;height:34px;border-radius:50%;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-primary);flex:none;background:var(--surface-1);
+}
+.brand-mark .porsche-crest{width:20px;height:20px;fill:currentColor;display:block;}
+.brand-text{font-size:14px;letter-spacing:2.5px;font-weight:600;text-transform:uppercase;color:var(--text-primary);}
+.brand-sub{font-size:11px;color:var(--text-muted);letter-spacing:0.5px;margin-top:1px;}
+.topnav{display:flex;gap:26px;font-size:13px;color:var(--text-secondary);}
+.topnav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:color .15s, border-color .15s;}
+.topnav a:hover{color:var(--text-primary);border-color:var(--accent);}
+.topbar-badge{
+  font-size:11px;color:var(--text-muted);border:1px solid var(--border-strong);
+  padding:5px 10px;border-radius:20px;white-space:nowrap;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;min-height:64vh;display:flex;align-items:flex-end;
+  background: linear-gradient(180deg, rgba(8,9,10,0.35) 0%, rgba(8,9,10,0.55) 45%, rgba(8,9,10,0.97) 100%), var(--bg-plane);
+  background-size:cover;background-position:center 40%;
+  border-bottom:1px solid var(--border);
+}
+.hero-noimg{background-image:
+  radial-gradient(ellipse at 20% 20%, rgba(228,0,43,0.10), transparent 55%),
+  radial-gradient(ellipse at 80% 0%, rgba(198,150,50,0.08), transparent 50%);
+}
+.hero-inner{max-width:1320px;margin:0 auto;padding:64px 28px 44px;width:100%;position:relative;z-index:2;}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--gold);border:1px solid rgba(198,150,50,0.4);background:rgba(198,150,50,0.08);
+  padding:6px 12px;border-radius:20px;margin-bottom:22px;
+}
+.hero-kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.hero h1{
+  font-size:clamp(34px, 5vw, 58px);line-height:1.03;margin:0 0 16px;font-weight:700;letter-spacing:-1px;
+  max-width:820px;
+}
+.hero h1 em{color:var(--accent);font-style:normal;}
+.hero p.lede{font-size:17px;color:var(--text-secondary);max-width:620px;margin:0 0 30px;}
+.hero-stats{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--border-strong);padding-top:22px;max-width:920px;}
+.hero-stat{padding:0 28px 0 0;margin-right:28px;border-right:1px solid var(--border);}
+.hero-stat:last-child{border-right:none;}
+.hero-stat .v{font-size:26px;font-weight:700;letter-spacing:-0.5px;}
+.hero-stat .l{font-size:12px;color:var(--text-muted);margin-top:3px;}
+
+/* ---------- Sections ---------- */
+main{max-width:1320px;margin:0 auto;padding:52px 28px 30px;}
+section{margin-bottom:56px;}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap;}
+.section-head h2{font-size:22px;margin:0;font-weight:700;letter-spacing:-0.3px;}
+.section-head .eyebrow{font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px;display:block;}
+.section-head p{margin:6px 0 0;color:var(--text-secondary);font-size:14px;max-width:640px;}
+
+/* ---------- Filters ---------- */
+.filters{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:var(--surface-1);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:14px 16px;margin-bottom:36px;
+}
+.filters .flabel{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-right:2px;}
+.filters select{
+  background:var(--surface-2);color:var(--text-primary);border:1px solid var(--border-strong);
+  border-radius:6px;padding:8px 10px;font-size:13px;font-family:inherit;cursor:pointer;
+}
+.filters select:hover{border-color:var(--accent-line);}
+.filters .reset{
+  margin-left:auto;font-size:12.5px;color:var(--text-secondary);cursor:pointer;
+  border:1px solid var(--border-strong);padding:7px 12px;border-radius:6px;background:transparent;
+  font-family:inherit;
+}
+.filters .reset:hover{color:var(--text-primary);border-color:var(--accent-line);}
+.filters .scope-note{font-size:12px;color:var(--text-muted);}
+
+/* ---------- KPI row ---------- */
+.kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+.kpi-tile{
+  background:var(--surface-1);border:1px solid var(--border);border-radius:var(--radius-card);
+  padding:18px 16px;position:relative;overflow:hidden;
+}
+.kpi-tile.hi{border-color:rgba(228,0,43,0.35);}
+.kpi-tile .l{font-size:12px;color:var(--text-secondary);margin-bottom:10px;}
+.kpi-tile .v{font-size:24px;font-weight:700;letter-spacing:-0.5px;}
+.kpi-tile .d{font-size:12px;margin-top:8px;color:var(--text-muted);}
+.kpi-tile .d.up{color:var(--good);}
+.kpi-tile .d.down{color:var(--critical);}
+
+/* ---------- Chart cards ---------- */
+.charts-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;}
+.card{
+  background:var(--surface-1);border:1px solid var(--border);border-radius:var(--radius-card);
+  padding:20px 22px 18px;position:relative;
+}
+.card h3{font-size:14.5px;margin:0 0 2px;font-weight:700;}
+.card .sub{font-size:12px;color:var(--text-muted);margin-bottom:14px;}
+.span-8{grid-column:span 8;}
+.span-4{grid-column:span 4;}
+.span-6{grid-column:span 6;}
+.span-12{grid-column:span 12;}
+.legend-row{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--text-secondary);margin-bottom:10px;}
+.legend-row .item{display:flex;align-items:center;gap:6px;}
+.legend-row .sw{width:10px;height:10px;border-radius:2px;display:inline-block;}
+.table-toggle{
+  position:absolute;top:18px;right:20px;font-size:11px;color:var(--text-muted);
+  border:1px solid var(--border-strong);padding:4px 9px;border-radius:6px;cursor:pointer;background:transparent;font-family:inherit;
+}
+.table-toggle:hover{color:var(--text-primary);border-color:var(--accent-line);}
+
+/* ---------- HBar chart ---------- */
+.hbar-list{display:flex;flex-direction:column;gap:11px;}
+.hbar-row{display:grid;grid-template-columns:120px 1fr 78px;align-items:center;gap:10px;cursor:default;}
+.hbar-row .lbl{font-size:12.5px;color:var(--text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hbar-track{background:var(--surface-3);border-radius:4px;height:16px;position:relative;overflow:hidden;}
+.hbar-fill{
+  position:absolute;left:0;top:0;bottom:0;border-radius:4px;
+  background:var(--accent);transition:filter .12s, background .12s;
+}
+.hbar-row:hover .hbar-fill{filter:brightness(1.18);}
+.hbar-row:hover .lbl{color:var(--text-primary);}
+.hbar-val{font-size:12.5px;color:var(--text-primary);font-variant-numeric:tabular-nums;text-align:right;font-weight:600;}
+.hbar-fill.status-good{background:var(--good);}
+.hbar-fill.status-warning{background:var(--warning);}
+.hbar-fill.status-critical{background:var(--critical);}
+
+/* ---------- Tooltip ---------- */
+#tooltip{
+  position:fixed;pointer-events:none;z-index:200;
+  background:#0e0f11;border:1px solid var(--border-strong);border-radius:8px;
+  padding:10px 12px;font-size:12px;color:var(--text-primary);
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);opacity:0;transform:translateY(4px);
+  transition:opacity .1s, transform .1s;min-width:140px;
+}
+#tooltip.show{opacity:1;transform:translateY(0);}
+#tooltip .tt-title{font-weight:700;margin-bottom:5px;font-size:12.5px;}
+#tooltip .tt-row{display:flex;align-items:center;gap:6px;justify-content:space-between;gap:14px;}
+#tooltip .tt-row + .tt-row{margin-top:3px;}
+#tooltip .tt-key{display:flex;align-items:center;gap:6px;color:var(--text-secondary);}
+#tooltip .tt-key .ln{width:9px;height:2px;background:var(--accent);display:inline-block;}
+#tooltip .tt-value{font-weight:700;font-variant-numeric:tabular-nums;}
+
+/* ---------- SVG charts ---------- */
+.svg-chart{width:100%;height:auto;overflow:visible;}
+.axis-label{fill:var(--text-muted);font-size:10.5px;font-family:inherit;}
+.gridline{stroke:var(--grid);stroke-width:1;}
+.area-fill{fill:var(--accent);opacity:0.14;}
+.line-path{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.pt-dot{fill:var(--accent);stroke:var(--surface-1);stroke-width:2;}
+.pt-hit{fill:transparent;cursor:pointer;}
+.crosshair{stroke:var(--border-strong);stroke-width:1;pointer-events:none;}
+.scatter-dot{fill:var(--accent);opacity:0.7;stroke:var(--surface-1);stroke-width:1;}
+.scatter-dot:hover, .scatter-dot.hover{opacity:1;}
+
+/* ---------- Insights narrative ---------- */
+.insights-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.insight-card{
+  background:var(--surface-1);border:1px solid var(--border);border-left:3px solid var(--accent);
+  border-radius:var(--radius-sm);padding:16px 18px;
+}
+.insight-card.gold{border-left-color:var(--gold);}
+.insight-card.warn{border-left-color:var(--warning);}
+.insight-card .tag{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:7px;}
+.insight-card p{margin:0;font-size:13.5px;color:var(--text-secondary);line-height:1.55;}
+.insight-card p strong{color:var(--text-primary);}
+
+/* ---------- Table ---------- */
+.table-controls{display:flex;gap:12px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
+.table-controls input[type=text]{
+  background:var(--surface-2);border:1px solid var(--border-strong);border-radius:6px;
+  padding:9px 12px;color:var(--text-primary);font-size:13px;font-family:inherit;width:240px;
+}
+.table-controls input[type=text]::placeholder{color:var(--text-muted);}
+.table-meta{font-size:12px;color:var(--text-muted);margin-left:auto;}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-sm);}
+table.data-table{width:100%;border-collapse:collapse;font-size:12.8px;}
+table.data-table th{
+  text-align:left;padding:10px 14px;background:var(--surface-2);color:var(--text-secondary);
+  font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;
+  cursor:pointer;user-select:none;border-bottom:1px solid var(--border-strong);position:sticky;top:0;
+}
+table.data-table th:hover{color:var(--text-primary);}
+table.data-table th .arrow{opacity:0.4;margin-left:4px;font-size:10px;}
+table.data-table th.sorted .arrow{opacity:1;color:var(--accent);}
+table.data-table td{padding:9px 14px;border-bottom:1px solid var(--border);white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--text-secondary);}
+table.data-table tbody tr:hover{background:var(--surface-2);}
+table.data-table td.price{color:var(--text-primary);font-weight:600;}
+.status-pill{
+  display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;
+}
+.status-pill::before{content:"";width:6px;height:6px;border-radius:50%;}
+.status-pill.st-good{background:rgba(23,179,74,0.12);color:#3ed17e;}
+.status-pill.st-good::before{background:var(--good);}
+.status-pill.st-warning{background:rgba(250,178,25,0.12);color:#fcc35b;}
+.status-pill.st-warning::before{background:var(--warning);}
+.status-pill.st-critical{background:rgba(230,71,63,0.12);color:#f0857e;}
+.status-pill.st-critical::before{background:var(--critical);}
+.table-pagination{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:14px;font-size:12.5px;color:var(--text-secondary);}
+.table-pagination button{
+  background:var(--surface-2);border:1px solid var(--border-strong);color:var(--text-primary);
+  border-radius:6px;padding:6px 12px;cursor:pointer;font-family:inherit;font-size:12.5px;
+}
+.table-pagination button:disabled{opacity:0.35;cursor:default;}
+.table-pagination button:not(:disabled):hover{border-color:var(--accent-line);}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--border);padding:36px 28px 60px;}
+.footer-inner{max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-col{max-width:420px;}
+.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin:0 0 10px;}
+.footer-col p, .footer-col li{font-size:12.5px;color:var(--text-secondary);line-height:1.7;}
+.footer-col ul{margin:0;padding-left:16px;}
+.footer-bottom{max-width:1320px;margin:24px auto 0;padding-top:20px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-muted);flex-wrap:wrap;gap:8px;}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .kpi-row{grid-template-columns:repeat(3,1fr);}
+  .span-8,.span-6,.span-4{grid-column:span 12;}
+  .insights-grid{grid-template-columns:1fr;}
+  .topnav{display:none;}
+}
+@media (max-width:640px){
+  .kpi-row{grid-template-columns:repeat(2,1fr);}
+  .hero h1{font-size:32px;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark"><svg class="porsche-crest" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Porsche"><path d="M11.972 0A25.68 25.68 0 0 0 9.93.091a27.858 27.858 0 0 0-4.248.685 23.565 23.565 0 0 0-2.975.966l-.06.022s.118 7.243.21 10.831a9.934 9.934 0 0 0 .569 3.098 14.899 14.899 0 0 0 1.622 3.214A12.884 12.884 0 0 0 7.56 21.66a11.234 11.234 0 0 0 1.192.873 15.214 15.214 0 0 0 2.038 1.031c.233.098.436.192.62.255A4.58 4.58 0 0 0 12 24a4.58 4.58 0 0 0 .59-.182c.182-.063.387-.156.62-.255a15.22 15.22 0 0 0 2.037-1.031 11.25 11.25 0 0 0 1.194-.873 12.88 12.88 0 0 0 2.511-2.752 14.889 14.889 0 0 0 1.622-3.214 9.934 9.934 0 0 0 .57-3.098c.091-3.588.21-10.827.21-10.827a.635.635 0 0 0-.057-.026 23.564 23.564 0 0 0-2.976-.966 27.856 27.856 0 0 0-4.248-.684A26.068 26.068 0 0 0 12.031 0zm0 .361h.057c.679.008 1.288.03 1.963.09a26.585 26.585 0 0 1 4.084.663 22.53 22.53 0 0 1 2.861.937.619.619 0 0 1 .057.025l-.038 2.274a.113.113 0 0 0-.019-.01 22.55 22.55 0 0 0-2.86-.937 26.61 26.61 0 0 0-4.085-.662c-.675-.06-1.281-.1-1.96-.108h-.058c-.679.009-1.29.048-1.965.108a26.608 26.608 0 0 0-4.084.665 22.547 22.547 0 0 0-2.861.938.116.116 0 0 0-.02.01l-.038-2.281.058-.022a22.527 22.527 0 0 1 2.86-.937A26.581 26.581 0 0 1 10.01.45c.675-.06 1.284-.08 1.963-.089zm.288.216a16.633 16.633 0 0 0-.902.008c-.121.005-.288.109-.29.23l-.007.648c-.002.132.172.236.305.239.462.01.87.002 1.318.03.033.003.062.023.062.056l-.003.13a.042.042 0 0 1-.045.046c-.521 0-1.066-.025-1.593.017-.028.002-.027-.005-.028.023l-.024.384-.002.03a16.318 16.318 0 0 1 1.882 0 .32.32 0 0 0 .305-.262l.006-.627c0-.129-.158-.224-.261-.23-.442-.028-.945-.013-1.394-.025a.046.046 0 0 1-.044-.05l.009-.145c0-.028.019-.036.047-.037.444-.016 1.107.005 1.562.019a.072.072 0 0 0 .06-.07V.674c0-.017-.032-.067-.063-.068V.605a33.113 33.113 0 0 0-.9-.028zm-1.88.064c-.423.008-1.341.125-1.862.19L8.515 2.64v.023l.47-.06a.014.014 0 0 0 .01-.006.014.014 0 0 0 .003-.01v-.523l.947-.102c.083-.015.18.046.256.169a.88.88 0 0 1 .114.339l.467-.035c.01 0 .03 0 .028-.01a.988.988 0 0 0-.307-.663.316.316 0 0 0 .197-.31 4.34 4.34 0 0 0-.022-.564.32.32 0 0 0-.3-.247zm3.59.019a.404.404 0 0 0-.413.332l-.01 1.195a.312.312 0 0 0 .24.289c.61.057 1.21.112 1.89.215.011 0 .032-.007.032-.017v-.416c0-.009-.02-.028-.027-.03-.454-.057-1.053-.137-1.589-.193a.076.076 0 0 1-.058-.07v-.812c0-.034.05-.052.084-.05.529.044 1.056.14 1.584.197.014.002.036-.007.037-.021l.01-.382a.037.037 0 0 0-.029-.033 36.382 36.382 0 0 0-1.75-.204zm1.98.237c-.012 0-.022.014-.022.025-.006.274-.045 1.457-.053 1.772v.027c.155.027.326.048.453.074.014.002.035-.008.035-.022-.002-.207 0-.448-.004-.636 0-.013.006-.014.02-.012a31.392 31.392 0 0 1 1.102.22c.008 0 .052.007.052.03-.003.217-.007.4-.013.617a.041.041 0 0 0 .027.04c.145.033.283.067.42.1.037.008.043.001.044-.012.022-.451.03-1.174.036-1.784 0-.008-.003-.02-.01-.022-.153-.035-.297-.072-.453-.105-.014-.003-.022.02-.023.035-.015.223-.009.43-.026.652 0 .008 0 .012-.009.01-.37-.076-.765-.158-1.132-.227-.01-.002-.006-.02-.005-.031l.003-.653a.033.033 0 0 0-.026-.03 23.196 23.196 0 0 0-.417-.068zM7.934.92a.303.303 0 0 0-.037 0c-.543.086-1.089.201-1.64.32a.5.5 0 0 0-.23.143.322.322 0 0 0-.102.205l.004 1.118a.434.434 0 0 0 .106.266.24.24 0 0 0 .204.11 38.518 38.518 0 0 1 1.633-.323.497.497 0 0 0 .268-.166.362.362 0 0 0 .098-.23L8.236 1.2a.28.28 0 0 0-.11-.198.303.303 0 0 0-.191-.08zm2.157.197a.076.076 0 0 1 .08.069l.003.189a.172.172 0 0 1-.14.166l-1.062.104-.009-.008V1.23l.009-.004 1.111-.108a.076.076 0 0 1 .008 0zm-2.52.29a.167.167 0 0 1 .078.022.117.117 0 0 1 .054.106l-.009.704a.125.125 0 0 1-.049.105.291.291 0 0 1-.12.047 61.16 61.16 0 0 1-.997.19.106.106 0 0 1-.088-.017.133.133 0 0 1-.03-.1v-.726a.143.143 0 0 1 .04-.097.243.243 0 0 1 .12-.06c.29-.054.67-.129.968-.172a.167.167 0 0 1 .033-.002zm10.81 0l-.001.001c-.008 0-.008.012-.008.019-.014.606-.03 1.167-.035 1.773 0 .013.006.03.018.033a22.245 22.245 0 0 1 2.158.7c.032.011.031-.013.031-.022.003-.138.01-.278.003-.416a.041.041 0 0 0-.025-.033 16.602 16.602 0 0 0-1.66-.541.028.028 0 0 1-.019-.026l.008-.18c0-.008.014-.01.022-.008a21.848 21.848 0 0 1 1.67.542c.01.003.01-.01.01-.019a5.121 5.121 0 0 0 0-.468.029.029 0 0 0-.02-.026 21.457 21.457 0 0 0-1.638-.523c-.008-.002-.018-.01-.018-.018v-.192c0-.008.013-.013.021-.01.564.144 1.184.36 1.615.519.038.014.06.008.06-.027 0-.157.006-.168-.002-.324-.002-.02-.004-.04-.022-.047a21.383 21.383 0 0 0-2.169-.707zm-12.97.064a.365.365 0 0 0-.084.009c-.65.166-1.303.414-1.956.652a.063.063 0 0 0-.03.052V3.65l.003.33s.471-.177.573-.21c.013-.004.013-.017.013-.031l-.01-.52c0-.015.002-.037.016-.04l1.625-.502a.306.306 0 0 0 .138-.101.237.237 0 0 0 .052-.156l-.017-.683a.272.272 0 0 0-.119-.197.365.365 0 0 0-.204-.068zm-.286.496c.036-.01.07.031.072.063a1.86 1.86 0 0 1 .012.25c-.001.045-.066.097-.11.11l-1.184.386c-.011.004-.031 0-.031-.012l.002-.358c0-.017.02-.031.036-.036a10.796 10.796 0 0 1 1.203-.403zm6.967.981c.653.01 1.246.03 1.9.088a26.591 26.591 0 0 1 4.083.663 22.501 22.501 0 0 1 2.861.937.107.107 0 0 1 .014.007 89.441 89.441 0 0 0-.007.448h-8.851zm-.317.002l-.001 4.618H8.827c-.043-.004-.015-.023.015-.052a1.71 1.71 0 0 1 .715-.312c.022-.002.028-.014-.003-.054a.898.898 0 0 0-.93-.212.985.985 0 0 0-.624.603.04.04 0 0 1-.04.031 6.734 6.734 0 0 1-.47.013c-.025 0-.037-.032-.035-.056a.737.737 0 0 1 .343-.484 1.1 1.1 0 0 1 .519-.178.04.04 0 0 0 .02-.063.515.515 0 0 0-.105-.093.758.758 0 0 0-.504-.077 1.053 1.053 0 0 0-.948.964c-.01.06.006.074-.053.094-.112.038-.322.064-.434.088-.02.003-.05-.043-.045-.063a1.309 1.309 0 0 1 .244-.522 1.006 1.006 0 0 1 .342-.291c.026-.013.05-.044.026-.064-.253-.22-.771.012-.98.241a1.37 1.37 0 0 0-.275.91c0 .016.014.041 0 .047a4.942 4.942 0 0 1-.4.15c-.012.003-.014-.028-.016-.04a.93.93 0 0 1 .147-.677.661.661 0 0 1 .244-.241c.01-.006.008-.018 0-.028-.115-.149-.569-.042-.708.094-.32.312-.297.615-.312 1.097-.001.023-.03.111-.056.123a.57.57 0 0 1-.184.07c-.021.006-.023.014-.028-.007a.39.39 0 0 0-.57-.222.356.356 0 0 0-.077.532c.015.017.02.034-.003.041a.42.42 0 0 0-.275.534.336.336 0 0 0 .296.21.628.628 0 0 0 .37-.108.043.043 0 0 1 .06.01.386.386 0 0 0 .531.124c.162-.107.234-.273.114-.559-.007-.016.02-.046.034-.054a6.615 6.615 0 0 1 3.144-.88 1.78 1.78 0 0 1 .456.101.094.094 0 0 1 .023.008l.002.941a.19.19 0 0 1-.034.025 1.005 1.005 0 0 0-.432.55c-.004.017-.006.021-.035.024-.193.019-.399.047-.591.062-.011.002-.032-.019-.028-.03a1.87 1.87 0 0 1 .725-.908.057.057 0 0 0 .01-.067.375.375 0 0 0-.168-.093 1.087 1.087 0 0 0-.895.362 1.418 1.418 0 0 0-.312.875c-.001.022.003.058-.019.065-.124.039-.261.074-.39.11-.015.004-.035-.011-.038-.027a1.006 1.006 0 0 1 .486-1.03c.051-.04-.038-.102-.102-.102a.963.963 0 0 0-.913.53 1.301 1.301 0 0 0-.03.793c.003.023.019.063-.006.069-.079.019-.265.09-.323.108-.021.007-.035-.003-.047-.03a1.041 1.041 0 0 1-.021-.488 1.102 1.102 0 0 1 .268-.493c.008-.01.011-.032 0-.037a.54.54 0 0 0-.378-.025.74.74 0 0 0-.477.38c-.159.297-.118.583.051 1.005.008.02.018.058 0 .07l-.137.08c-.017.013-.032.002-.044-.015-.055-.078-.124-.202-.21-.24a.415.415 0 0 0-.428.035.406.406 0 0 0-.12.431.875.875 0 0 0 .1.152c.01.014-.001.036-.013.047-.059.052-.14.09-.188.14a.395.395 0 0 0-.01.471.365.365 0 0 0 .45.123 1.624 1.624 0 0 0 .232-.122c.027-.018.045-.051.07-.025a.546.546 0 0 0 .224.153.427.427 0 0 0 .354-.062.305.305 0 0 0 .168-.338.875.875 0 0 0-.143-.27c-.033-.035-.035-.033 0-.054a7.435 7.435 0 0 1 1.66-.724 5.024 5.024 0 0 1 1.69-.207h.046l.003 1.949H3.206c-.054-2.133-.116-5.51-.156-7.836a.113.113 0 0 1 .014-.007 22.499 22.499 0 0 1 2.86-.937 26.59 26.59 0 0 1 4.084-.663 23.38 23.38 0 0 1 1.768-.086zm-3.088.816a1.237 1.237 0 0 0-.693.232c-.286.188-.456.773-.49.982a.044.044 0 0 1-.04.036 5.998 5.998 0 0 0-.676.125c-.007.001-.012-.01-.012-.017a.983.983 0 0 1 .258-.59 3.506 3.506 0 0 1 .493-.396c.013-.011.004-.045-.012-.051a1.035 1.035 0 0 0-.797.012 1.129 1.129 0 0 0-.675.867 2.062 2.062 0 0 0-.029.41c.002.017-.03.018-.045.023-.246.077-.504.167-.71.236-.01.004-.039.002-.039-.01a1.168 1.168 0 0 1 .175-.655c.12-.195.343-.305.505-.469.011-.012.028-.044.011-.051-.41-.165-.797.004-1.124.375a1.395 1.395 0 0 0-.2 1.124c.009.036 0 .075-.019.083a1.805 1.805 0 0 1-.23.089.025.025 0 0 1-.033-.02c-.093-.296-.44-.238-.597-.148a.361.361 0 0 0-.139.489.031.031 0 0 1-.01.044.442.442 0 0 0-.205.596.352.352 0 0 0 .428.137 1.208 1.208 0 0 0 .246-.129.027.027 0 0 1 .03.004.393.393 0 0 0 .566.08c.115-.082.16-.096.204-.244a.39.39 0 0 0-.09-.3c-.012-.01-.001-.04.013-.047A9.692 9.692 0 0 1 8.947 5.51a2.35 2.35 0 0 1 1.446.553.072.072 0 0 0 .062.031.098.098 0 0 0 .054-.056.66.66 0 0 0-.204-.678 1.21 1.21 0 0 0-.612-.344c-.012-.003-.02-.029-.01-.037a.968.968 0 0 1 .335-.22 3.587 3.587 0 0 1 .605-.05c.014-.001.035-.015.03-.028a.606.606 0 0 0-.527-.4 1.325 1.325 0 0 0-.693.1 1.118 1.118 0 0 0-.5.553.036.036 0 0 1-.032.02 12.139 12.139 0 0 0-.594-.007c-.014 0-.035 0-.035-.014a.943.943 0 0 1 .255-.517 1.989 1.989 0 0 1 .68-.386c.019-.006.04-.036.029-.051a.549.549 0 0 0-.201-.17 1.237 1.237 0 0 0-.347-.041zm3.405 1.607h8.845c-.012.686-.025 1.433-.04 2.195h-8.805zM8.681 7.801l6.666.003a.016.016 0 0 1 .017.013l-.002 5.138a2.354 2.354 0 0 1-.143.764 3.327 3.327 0 0 1-1.44 1.725 3.468 3.468 0 0 1-1.74.491 3.512 3.512 0 0 1-2.26-.86 3.078 3.078 0 0 1-1.105-2.31L8.667 7.82c0-.013.001-.019.014-.019zm6.994.086h5.217c-.012.645-.025 1.296-.034 1.926h-5.183V8.318zm-6.839.071c-.013 0-.014.005-.014.018l.007 4.753a2.97 2.97 0 0 0 1.054 2.225 3.333 3.333 0 0 0 2.153.827 3.284 3.284 0 0 0 1.66-.473 3.193 3.193 0 0 0 1.374-1.66 2.28 2.28 0 0 0 .136-.734l.002-4.94a.015.015 0 0 0-.016-.014zm4.436.304a.101.101 0 0 1 .001 0 .11.11 0 0 1 .087.071l.242.715a.079.079 0 0 1-.003.07.066.066 0 0 1-.054.024.065.065 0 0 1-.063-.044l-.038-.125h-.33l-.036.128c-.01.04-.04.044-.071.044a.063.063 0 0 1-.044-.028.057.057 0 0 1-.01-.052l.232-.728a.101.101 0 0 1 .087-.075zm-.763.007a.226.226 0 0 1 .023 0 .232.232 0 0 1 .235.157.046.046 0 0 1-.031.059.053.053 0 0 1-.07-.02.166.166 0 0 0-.132-.09.151.151 0 0 0-.133.1.498.498 0 0 0-.055.222.524.524 0 0 0 .046.228.159.159 0 0 0 .154.102.233.233 0 0 0 .166-.243v-.039h-.135a.057.057 0 0 1-.059-.063c0-.023.007-.05.059-.05h.192c.064 0 .073.048.073.09a.792.792 0 0 1-.011.152.399.399 0 0 1-.15.236.301.301 0 0 1-.15.043.257.257 0 0 1-.227-.145.618.618 0 0 1-.073-.31.577.577 0 0 1 .08-.304.226.226 0 0 1 .198-.125zm-2.988.002a.318.318 0 0 1 .004 0c.183.002.243.111.243.15 0 .035-.061.08-.095.039a.2.2 0 0 0-.157-.068.143.143 0 0 0-.15.096.114.114 0 0 0 .094.135.61.61 0 0 1 .267.08h-.001a.202.202 0 0 1 .081.18.247.247 0 0 1-.067.175.327.327 0 0 1-.247.088.297.297 0 0 1-.263-.14c-.004-.01-.01-.063.034-.078a.084.084 0 0 1 .082.026.239.239 0 0 0 .156.063.223.223 0 0 0 .148-.05.105.105 0 0 0 .024-.116.219.219 0 0 0-.193-.098.25.25 0 0 1-.172-.07.25.25 0 0 1-.069-.196.219.219 0 0 1 .1-.163.318.318 0 0 1 .181-.053zm1.649 0a.06.06 0 0 1 .001 0 .06.06 0 0 1 .006 0h.355a.06.06 0 1 1 0 .12l-.114.002v.682a.063.063 0 0 1-.125 0v-.683h-.116a.06.06 0 0 1-.007-.12zm.56 0a.06.06 0 0 1 .001 0 .06.06 0 0 1 .006 0h.354a.06.06 0 1 1 0 .12l-.114.002v.682a.063.063 0 0 1-.125 0v-.683h-.115a.06.06 0 0 1-.007-.12zm2.74 0a.06.06 0 0 1 .002 0 .06.06 0 0 1 .006 0h.353a.06.06 0 1 1 0 .12l-.112.002v.682a.063.063 0 0 1-.125 0v-.683h-.116a.06.06 0 0 1-.007-.12zm-.677.004a.063.063 0 0 1 .012 0h.19a.364.364 0 0 1 .208.058.278.278 0 0 1 .108.206.235.235 0 0 1-.071.198.305.305 0 0 1-.117.075l-.02.007.158.2a.086.086 0 0 1 .023.056c-.002.032-.023.05-.06.05a.066.066 0 0 1-.056-.027l-.187-.258h-.117v.23a.059.059 0 0 1-.063.067.06.06 0 0 1-.062-.067v-.726a.073.073 0 0 1 .016-.05.063.063 0 0 1 .038-.019zm-3.87.002a.06.06 0 0 1 .003 0h.357a.06.06 0 0 1 0 .121h-.116v.684a.063.063 0 0 1-.125 0v-.684h-.116a.06.06 0 0 1-.003-.12zm.583 0a.063.063 0 0 1 .002 0 .063.063 0 0 1 .065.064v.471a.258.258 0 0 0 .037.151.146.146 0 0 0 .127.056.138.138 0 0 0 .125-.056.265.265 0 0 0 .035-.15V8.34h.001a.063.063 0 0 1 .125 0v.432a.474.474 0 0 1-.056.262.25.25 0 0 1-.228.104.26.26 0 0 1-.23-.104.456.456 0 0 1-.061-.262V8.34a.063.063 0 0 1 .058-.063zm3.354.115v.328h.13a.18.18 0 0 0 .2-.174.15.15 0 0 0-.051-.109.178.178 0 0 0-.13-.045zm-.584.015l-.136.469h.278zm-1.14 1.005c.011 0 .021.002.022.011.002.018-.016.029-.042.042a.206.206 0 0 0-.094.08.31.31 0 0 0-.039.163.115.115 0 0 0 .063.079.298.298 0 0 0 .142.028.502.502 0 0 0 .215-.063.581.581 0 0 1 .276-.02.341.341 0 0 1 .194.063c.024.017.02.038.011.04-.014.005-.029-.012-.044-.01a.674.674 0 0 0-.142.03c-.06.027-.087.037-.116.09a.099.099 0 0 0-.007.073c.01.024.035.04.04.057a.446.446 0 0 0 .064.125.205.205 0 0 0 .03.023 2.668 2.668 0 0 1 .282.243.26.26 0 0 1 .04.093c.003.012-.007.03-.018.025a.255.255 0 0 1-.036-.029.178.178 0 0 0-.053-.039.368.368 0 0 0-.176-.025c-.027 0-.081.024-.05.036a.357.357 0 0 1 .132.116.43.43 0 0 1 .107.31c0 .006-.012.01-.015.006a.359.359 0 0 0-.102-.109.324.324 0 0 0-.21-.062c-.015.001-.06 0-.055.014a1.19 1.19 0 0 1 .123.191.562.562 0 0 1 .039.276c-.001.005-.02.01-.023.005a.61.61 0 0 0-.077-.076.349.349 0 0 0-.094-.06.29.29 0 0 0-.204.028.325.325 0 0 0-.13.132.492.492 0 0 0-.062.205.46.46 0 0 0 .042.257.368.368 0 0 0 .19.164.955.955 0 0 0 .334.044c.139.005.278-.016.417-.02a1.943 1.943 0 0 1 .396.003.88.88 0 0 1 .3.12 2.64 2.64 0 0 1 .215.183c.008.006.026-.003.035-.009a.462.462 0 0 0 .131-.233.346.346 0 0 0-.056-.246c-.047-.085-.116-.18-.17-.27a2.962 2.962 0 0 1-.202-.296.305.305 0 0 1-.017-.221.238.238 0 0 1 .107-.128c.011-.007.022.006.017.021a.184.184 0 0 0-.008.112.32.32 0 0 0 .089.14c.013.01.047-.005.055-.021.018-.043.007-.11.023-.154a.619.619 0 0 1 .108-.226 1.47 1.47 0 0 1 .36-.196c.033-.019.054-.105.091-.091.037.013.017.1-.011.142-.04.062-.087.1-.131.156a1.536 1.536 0 0 0-.157.247.222.222 0 0 0-.029.137.14.14 0 0 0 .073.094c.022.01.05-.01.07-.025a.385.385 0 0 0 .097-.103c.023-.038.01-.089.032-.128.006-.009.03-.007.037 0a.139.139 0 0 1 .044.084.393.393 0 0 1-.01.113c-.003.008-.024.027-.031.045a.244.244 0 0 1-.02.04c-.036.063-.078.116-.125.126-.01.001-.017.021-.01.03a.391.391 0 0 0 .113.132.198.198 0 0 0 .152.01c.027-.008.048-.027.079-.037.013-.004.005.004.005.017a.27.27 0 0 1-.015.086.19.19 0 0 1-.075.083.395.395 0 0 1-.166.05c-.027.005-.068.025-.058.051a.256.256 0 0 0 .042.085.122.122 0 0 0 .08.039.205.205 0 0 0 .125-.036c.04-.026.061-.074.096-.108.007-.006.026 0 .026.01a.36.36 0 0 1-.041.158.497.497 0 0 1-.128.138c-.015.013-.033.029-.033.049a.2.2 0 0 0 .044.084.134.134 0 0 0 .083.054.269.269 0 0 0 .1 0c.013 0 .01.023-.001.031a.253.253 0 0 1-.117.068.25.25 0 0 1-.128.008c-.081-.02-.134-.05-.214-.073a.23.23 0 0 0-.135-.009.227.227 0 0 0-.106.083.133.133 0 0 0-.03.064c-.006.063.025.13.005.192a1.415 1.415 0 0 1-.081.234 1.314 1.314 0 0 1-.115.165c-.04.054-.093.074-.12.133a.638.638 0 0 1-.038.063.515.515 0 0 0-.058.229.452.452 0 0 0 .085.209l.153.237a.149.149 0 0 1 .009.083.088.088 0 0 1-.044.07.893.893 0 0 0-.419.527l-.002.013v.004a.106.106 0 0 1-.021.042.334.334 0 0 1-.19.096c-.055.015-.11.029-.165.046a.077.077 0 0 0-.044.031.08.08 0 0 0 .009.097.137.137 0 0 1 .03.071.063.063 0 0 1-.013.042.108.108 0 0 1-.028.022.865.865 0 0 1-.216.087c-.05.011-.086-.002-.07-.059a3.075 3.075 0 0 1 .098-.293.42.42 0 0 1 .133-.14 2.289 2.289 0 0 1 .212-.162.411.411 0 0 0 .119-.126 3.299 3.299 0 0 1 .19-.275.163.163 0 0 0 .029-.129.246.246 0 0 0-.142-.185 1.052 1.052 0 0 0-.085-.034.534.534 0 0 1-.246-.175.09.09 0 0 0-.062-.04c-.063.002-.081.09-.083.138a1.17 1.17 0 0 0 .004.212.18.18 0 0 1 .004.072.055.055 0 0 1-.039.034 2.74 2.74 0 0 0-.565.279.24.24 0 0 0-.063.07l-.017.029a.187.187 0 0 1-.223.08.5.5 0 0 0-.044-.011.094.094 0 0 0-.064.017.162.162 0 0 0-.041.036.06.06 0 0 0-.01.019v.006a.057.057 0 0 0 0 .008.07.07 0 0 0 .004.017l.022.06a.066.066 0 0 1-.038.096.881.881 0 0 1-.203.055c-.04.005-.075-.01-.065-.057a1.1 1.1 0 0 1 .07-.237.094.094 0 0 1 .057-.06.79.79 0 0 0 .179-.14.266.266 0 0 1 .169-.073.512.512 0 0 0 .262-.1 1.73 1.73 0 0 0 .225-.186.37.37 0 0 0-.006-.46l-.02-.035c-.019-.03-.03-.073-.046-.104a.24.24 0 0 1-.039-.104c0-.068.027-.133.031-.201a.024.024 0 0 0-.016-.025.488.488 0 0 0-.137-.03 2.677 2.677 0 0 1-.56.006 1.423 1.423 0 0 1-.39-.18c-.053-.033-.085-.07-.139-.101-.014-.008-.015-.005-.028.006a.672.672 0 0 1-.459.125h-.002a1.766 1.766 0 0 1-.294-.077c-.073-.027-.19-.074-.26-.015-.029.025-.022.06-.022.093a1.244 1.244 0 0 1-.01.305.038.038 0 0 0 .003.032.044.044 0 0 0 .006.006.136.136 0 0 0 .036.02l.01.004c.028.01.033.023.05.058a.196.196 0 0 1 .016.062.159.159 0 0 1-.003.062.544.544 0 0 1-.009.039.207.207 0 0 0 .008.135.115.115 0 0 0 .042.053.073.073 0 0 0 .01.004.063.063 0 0 0 .01.003.068.068 0 0 0 .01 0h.01a.074.074 0 0 0 .02-.008l.004-.002a.05.05 0 0 1 .035-.012.046.046 0 0 1 .01.003.08.08 0 0 1 .063.074.484.484 0 0 1-.046.221.058.058 0 0 1-.077.03l-.018-.007a.445.445 0 0 1-.14-.117.19.19 0 0 1-.049-.112.12.12 0 0 0-.028-.082.09.09 0 0 0-.032-.016.144.144 0 0 1-.07-.046.268.268 0 0 1-.052-.219 1.5 1.5 0 0 0-.046-.64.149.149 0 0 1 .002-.108l.016-.043a.148.148 0 0 1 .007-.016.06.06 0 0 1 .042-.032.167.167 0 0 1 .029-.003 1.516 1.516 0 0 0 .45-.07.152.152 0 0 1 .062-.01.89.89 0 0 0 .073.002c.03 0 .06-.027.024-.05a.847.847 0 0 1-.084-.087.046.046 0 0 0-.052-.022.072.072 0 0 0-.01.005l-.009.005a.098.098 0 0 1-.152-.029.824.824 0 0 1-.087-.202.555.555 0 0 0-.109-.238.235.235 0 0 0-.19-.063.216.216 0 0 0-.13.098l-.063.088a.144.144 0 0 0-.031.067.107.107 0 0 0 0 .016.14.14 0 0 0 .008.032.133.133 0 0 1-.039.154l-.094.075a.087.087 0 0 0-.03.06.527.527 0 0 1-.012.06.13.13 0 0 0-.003.045.088.088 0 0 0 .002.012.081.081 0 0 0 .031.04.156.156 0 0 1 .013.012.074.074 0 0 1 .012.017.06.06 0 0 1-.012.07.219.219 0 0 1-.024.021.753.753 0 0 1-.19.108.098.098 0 0 1-.026.006c-.038.003-.05-.026-.052-.06-.003-.044-.003-.089-.003-.134a.207.207 0 0 1 .057-.137.36.36 0 0 0 .072-.225.197.197 0 0 1 .04-.13.305.305 0 0 0 .057-.09.257.257 0 0 1 .039-.066 3.861 3.861 0 0 0 .281-.384c.054-.086.155-.192.237-.073a.357.357 0 0 0 .078.084 2.395 2.395 0 0 0 .259.164c.094.053.109-.042.125-.121v-.003a.331.331 0 0 1 .038-.092 1.26 1.26 0 0 1 .202-.247c.043-.038.105-.076.15-.113.018-.016.023-.018.03-.04.009-.022.024-.05.034-.078.01-.027.015-.055.024-.076a.344.344 0 0 0 .044-.098v-.003a.023.023 0 0 0 0-.005v-.007l-.003-.007a.05.05 0 0 0-.021-.024.18.18 0 0 0-.102-.026h-.003a.384.384 0 0 0-.148.031.106.106 0 0 0-.054.054.226.226 0 0 1-.042.063.098.098 0 0 1-.13.006c-.024-.016-.014-.043 0-.063a.414.414 0 0 0 .035-.05.042.042 0 0 0 .005-.025v-.004l-.002-.005a.031.031 0 0 0-.005-.006.046.046 0 0 0-.045-.007.98.98 0 0 0-.083.027.064.064 0 0 1-.094-.047.174.174 0 0 1-.003-.055.055.055 0 0 1 .04-.05c.02-.006.05-.017.046-.042a.079.079 0 0 1 0-.023.052.052 0 0 1 .012-.024.14.14 0 0 1 .03-.025 3.869 3.869 0 0 0 .32-.234.05.05 0 0 1 .064-.01l.01.006a.223.223 0 0 0 .151.02.046.046 0 0 0 .041-.03.025.025 0 0 0 0-.005v-.005l-.002-.006-.003-.004a.071.071 0 0 0-.035-.021l-.058-.021a.269.269 0 0 1-.052-.025.053.053 0 0 1-.025-.059c.023-.113.147-.114.241-.105h.004a.505.505 0 0 0 .14-.022c.06-.021.106-.067.163-.094.057-.027.117-.057.176-.08.018-.006.033-.002.049-.009a.091.091 0 0 0 .035-.025.965.965 0 0 1 .142-.163.822.822 0 0 1 .236-.092.107.107 0 0 1 .03-.006zm-.425.557a.219.219 0 0 0-.105.026c-.009.005-.015.016-.008.024.018.021.049.03.07.05a.16.16 0 0 1 .035.046c.009.019.024.04.033.06a1.296 1.296 0 0 1 .045.123 1.227 1.227 0 0 1 .05.209c.01.057.007.117.01.175v.081c-.001.023-.001.047-.003.07a1.143 1.143 0 0 0-.004.098v.08c.002.07.013.12.044.12a.18.18 0 0 0 .084-.019.175.175 0 0 0 .085-.148 2.026 2.026 0 0 0-.003-.576.51.51 0 0 0-.188-.362.219.219 0 0 0-.144-.057zm3.96.161h5.177c-.017.825-.034 1.6-.05 2.263h-5.13l.004-1.862zm-.006 2.544h5.123a9.697 9.697 0 0 1-.545 2.911 14.495 14.495 0 0 1-1.56 3.118 12.45 12.45 0 0 1-2.415 2.669 10.809 10.809 0 0 1-1.147.848 14.592 14.592 0 0 1-1.96.999c-.224.096-.418.186-.596.247-.193.065-.358.125-.474.156v-.115l.003-7.295a3.552 3.552 0 0 0 .316-.023c.005.015.016.057.031.1a.333.333 0 0 0 .219.166.317.317 0 0 0 .306-.107.373.373 0 0 0 .388.067.235.235 0 0 0 .175-.227.43.43 0 0 0-.033-.208l-.036-.066a3.925 3.925 0 0 0 .744-.41l.02-.006c.373-.094 1.872-.631 2.791-.643a3.28 3.28 0 0 1 1.627.39 2.792 2.792 0 0 1 .682.56c.006.009.013.028.037.032a.036.036 0 0 0 .034-.022 1.139 1.139 0 0 0 .079-.516c-.02-.282-.3-.486-.383-.57-.003-.003-.01-.021.02-.041a.674.674 0 0 1 .105-.085.983.983 0 0 1 .562-.212c.03.003.02-.04.012-.076-.058-.25-.415-.412-.79-.354a.963.963 0 0 0-.613.417c-.007.011-.042.027-.056.013a2.926 2.926 0 0 0-.369-.107c-.045-.01-.021-.044-.019-.05a1.003 1.003 0 0 1 .304-.337 1.125 1.125 0 0 1 .494-.224c.022 0 .022-.03.016-.04a.55.55 0 0 0-.375-.302.844.844 0 0 0-.78.14 1.397 1.397 0 0 0-.445.673c-.014.02-.018.036-.036.032-.099-.02-.345-.007-.367-.022-.015-.007-.012-.03-.009-.045a.91.91 0 0 1 .222-.38.882.882 0 0 1 .364-.286.055.055 0 0 0 .01-.094.98.98 0 0 0-1.22.263 2.192 2.192 0 0 0-.304.696c-.002.009-.017.036-.036.036l-.508.112-.083.019-.022.023a3.29 3.29 0 0 0 .497-1.65zm-12.45.085h5.19v.09a3.145 3.145 0 0 0 .837 2.098H3.556a9.74 9.74 0 0 1-.342-2.188zm.415 2.443h5.863a2.566 2.566 0 0 0 .112.1 3.897 3.897 0 0 0 2.17.898v1.21h-7.22a13.789 13.789 0 0 1-.8-1.827 10.401 10.401 0 0 1-.125-.38zm10.584.29l-.01.012h-.002l-.002-.002a3.29 3.29 0 0 0 .015-.01zm1.738.185a.911.911 0 0 0-.507.155.934.934 0 0 0-.392.41 2.65 2.65 0 0 0-.172.775.063.063 0 0 1-.038.035 2.897 2.897 0 0 0-.335.087.026.026 0 0 1-.023-.02 1.105 1.105 0 0 1 .15-.727.886.886 0 0 1 .218-.263.037.037 0 0 0-.017-.068.98.98 0 0 0-.648.114.888.888 0 0 0-.452.667 1.589 1.589 0 0 0 .042.594c0 .006.006.027-.016.031-.076.037-.282.145-.355.18-.005.002-.019.005-.022-.006a.58.58 0 0 0-.268-.358.526.526 0 0 0-.446.022.548.548 0 0 0-.216.224.375.375 0 0 0 .127.455c.006.006.017.02 0 .025-.09.049-.092.06-.16.161a.428.428 0 0 0 .052.45.465.465 0 0 0 .7.082c.004-.003.018.005.025.02a.548.548 0 0 0 .143.151.463.463 0 0 0 .455 0 .413.413 0 0 0 .21-.415.378.378 0 0 0-.111-.262c-.013-.016 0-.024.034-.046a5.404 5.404 0 0 1 1.96-.666 3.121 3.121 0 0 1 1.076.022 1.504 1.504 0 0 1 .629.312 2.841 2.841 0 0 1 .406.402.164.164 0 0 0 .117-.025.66.66 0 0 0 .014-.517 1.604 1.604 0 0 0-.384-.59c-.003-.002-.003-.013-.003-.02-.004-.03.015-.045.052-.079a1.211 1.211 0 0 1 .562-.297c.027-.002.038-.022.02-.053a.656.656 0 0 0-.808-.298h-.001a.916.916 0 0 0-.454.416c-.006.011-.022.05-.037.038-.09-.008-.242-.032-.331-.04-.041-.002-.025-.039-.024-.045a.744.744 0 0 1 .194-.316 1.176 1.176 0 0 1 .444-.318.021.021 0 0 0 .016-.031.627.627 0 0 0-.465-.229.81.81 0 0 0-.617.238 1.255 1.255 0 0 0-.337.74c-.009.023-.02.035-.037.035a2 2 0 0 1-.278.025c-.015-.004-.014-.02-.014-.036a.91.91 0 0 1 .101-.406 1.491 1.491 0 0 1 .55-.582c.036-.025.038-.076.026-.082a.911.911 0 0 0-.355-.071zM4.707 17.692h7.069v2.19H6.213a11.237 11.237 0 0 1-.898-1.181 16.446 16.446 0 0 1-.609-1.01zm10.076 1.176a.497.497 0 0 0-.273.069.982.982 0 0 0-.475.56 1.09 1.09 0 0 0 .012.571c.003.007.012.024-.002.03-.078.03-.136.065-.213.096-.004 0-.024.005-.028-.005a.631.631 0 0 1 .088-.736c.017-.015.027-.035-.008-.047a.588.588 0 0 0-.531.193.677.677 0 0 0-.117.659.922.922 0 0 0 .099.261c.003.005.03.021.014.028l-.15.115c-.003.003-.014.008-.019 0a.486.486 0 0 0-.29-.238.341.341 0 0 0-.317.088.361.361 0 0 0 .147.602c.007.003.017.012.005.02a.587.587 0 0 0-.19.212.377.377 0 0 0 .085.406.37.37 0 0 0 .29.089.605.605 0 0 0 .357-.313c.002-.003.021-.017.031-.006a.531.531 0 0 0 .264.2.324.324 0 0 0 .323-.065.35.35 0 0 0 .111-.4.61.61 0 0 0-.201-.216c-.013-.01-.003-.035.023-.055a2.972 2.972 0 0 1 1.402-.62 1.801 1.801 0 0 1 1.025.166 1.547 1.547 0 0 1 .337.267c.013.007.05.02.063.008a.397.397 0 0 0 .035-.548.654.654 0 0 0-.206-.165.043.043 0 0 1-.007-.015.906.906 0 0 1 .301-.393 1.382 1.382 0 0 1 .295-.143c.022-.006.018-.02.007-.047-.128-.293-.635-.304-.874-.15a1.088 1.088 0 0 0-.346.396c-.005.01-.012.04-.025.031l-.213-.064c-.004 0-.004-.024-.002-.028a1.115 1.115 0 0 1 .696-.565c.015-.006.01-.02.007-.028-.11-.268-.661-.245-.93-.074a1.167 1.167 0 0 0-.493.714c-.003.02.006.037-.007.04a1.239 1.239 0 0 1-.23.055.024.024 0 0 1-.022-.023.642.642 0 0 1 .067-.392 2 2 0 0 1 .324-.408.043.043 0 0 0-.003-.063.497.497 0 0 0-.236-.07zm-3.006 1.296v3.417c-.098-.032-.214-.074-.342-.117-.178-.06-.373-.151-.597-.247a14.587 14.587 0 0 1-1.96-1 10.816 10.816 0 0 1-1.147-.847 12.861 12.861 0 0 1-1.266-1.206h5.31z"/></svg></div>
+      <div>
+        <div class="brand-text">Porsche Sales Intelligence</div>
+        <div class="brand-sub">Relatorio executivo &middot; Performance comercial</div>
+      </div>
+    </div>
+    <nav class="topnav">
+      <a href="#indicadores">Indicadores</a>
+      <a href="#analises">Analises</a>
+      <a href="#insights">Insights</a>
+      <a href="#registros">Registros</a>
+    </nav>
+    <div class="topbar-badge">Atualizado em 20/08/2026</div>
+  </div>
+</header>
+
+<section class="hero" id="topo" style="background-image:linear-gradient(180deg, rgba(8,9,10,0.30) 0%, rgba(8,9,10,0.55) 45%, rgba(8,9,10,0.98) 100%), url('https://images.porsche.com/f/338913/4000x2250/2ad8ca6c12/pcom-banner_fallback_16-9_flachbau-rs.jpg');">
+  <div class="hero-inner">
+    <span class="hero-kicker"><span class="dot"></span> Relatorio executivo &middot; Vendas Porsche</span>
+    <h1>Panorama comercial: performance de vendas, receita e carteira de pedidos</h1>
+    <p class="lede">Consolidado de vendas por modelo, regiao, forma de pagamento e etapa de entrega, com indicadores e leituras para apoiar as decisoes comerciais da diretoria.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="v">100</div><div class="l">Vendas no periodo</div></div>
+      <div class="hero-stat"><div class="v">$12.8M</div><div class="l">Receita total</div></div>
+      <div class="hero-stat"><div class="v">$128.3K</div><div class="l">Ticket medio</div></div>
+      <div class="hero-stat"><div class="v">33</div><div class="l">Estados atendidos</div></div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section id="indicadores">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Visao geral</span>
+        <h2>Indicadores-chave</h2>
+        <p>Os filtros abaixo recalculam todos os indicadores, graficos e a tabela de registros ao mesmo tempo.</p>
+      </div>
+    </div>
+
+    <div class="filters">
+      <span class="flabel">Filtrar por</span>
+      <select id="f-family"><option value="">Familia: todas</option></select>
+      <select id="f-status"><option value="">Status: todos</option></select>
+      <select id="f-state"><option value="">Estado: todos</option></select>
+      <span class="scope-note" id="scope-note"></span>
+      <button class="reset" id="f-reset">Limpar filtros</button>
+    </div>
+
+    <div class="kpi-row" id="kpi-row"></div>
+  </section>
+
+  <section id="analises">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Comparativos</span>
+        <h2>Vendas, receita e composicao da carteira</h2>
+        <p>Da tendencia trimestral ao mix por modelo, forma de pagamento e etapa de entrega &mdash; tudo reagindo aos filtros acima.</p>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="card span-8">
+        <h3>Receita por trimestre</h3>
+        <div class="sub">Soma da receita das vendas com data valida, agrupada por trimestre &middot; linha = receita, ponto = numero de vendas</div>
+        <div id="chart-trend"></div>
+      </div>
+      <div class="card span-4">
+        <h3>Preco x quilometragem</h3>
+        <div class="sub">Cada ponto e uma venda &middot; correlacao -0.548</div>
+        <div id="chart-scatter"></div>
+      </div>
+
+      <div class="card span-4">
+        <h3>Receita por familia de modelo</h3>
+        <div class="sub">Agrupamento dos 40 modelos Porsche em 6 familias</div>
+        <div id="chart-family"></div>
+      </div>
+      <div class="card span-4">
+        <h3>Top 8 estados por receita</h3>
+        <div class="sub">De 33 estados americanos atendidos</div>
+        <div id="chart-state"></div>
+      </div>
+      <div class="card span-4">
+        <h3>Forma de pagamento</h3>
+        <div class="sub">Receita por metodo de pagamento</div>
+        <div id="chart-payment"></div>
+      </div>
+
+      <div class="card span-6">
+        <h3>Funil de status de entrega</h3>
+        <div class="sub">Cor indica saude do pedido: entregue, em andamento ou cancelado</div>
+        <div class="legend-row">
+          <span class="item"><span class="sw" style="background:var(--good)"></span>Entregue</span>
+          <span class="item"><span class="sw" style="background:var(--warning)"></span>Em andamento</span>
+          <span class="item"><span class="sw" style="background:var(--critical)"></span>Cancelado</span>
+        </div>
+        <div id="chart-status"></div>
+      </div>
+      <div class="card span-6">
+        <h3>Top 8 vendedores por receita</h3>
+        <div class="sub">Ranking de performance individual no periodo</div>
+        <div id="chart-sales"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="insights">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Leitura analitica</span>
+        <h2>Insights para a diretoria</h2>
+        <p>Leituras objetivas calculadas sobre a base consolidada de vendas.</p>
+      </div>
+    </div>
+    <div class="insights-grid" id="insights-grid"></div>
+  </section>
+
+  <section id="registros">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Base completa</span>
+        <h2>Tabela interativa de vendas</h2>
+        <p>Busque, ordene por qualquer coluna e cruze com os filtros da secao de indicadores.</p>
+      </div>
+    </div>
+    <div class="table-controls">
+      <input type="text" id="table-search" placeholder="Buscar por modelo, cidade, vendedor...">
+      <span class="table-meta" id="table-meta"></span>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table" id="data-table">
+        <thead>
+          <tr>
+            <th data-key="id">ID<span class="arrow">&#9662;</span></th>
+            <th data-key="date">Data<span class="arrow">&#9662;</span></th>
+            <th data-key="model">Modelo<span class="arrow">&#9662;</span></th>
+            <th data-key="year">Ano<span class="arrow">&#9662;</span></th>
+            <th data-key="price">Preco<span class="arrow">&#9662;</span></th>
+            <th data-key="mileage">Milhas<span class="arrow">&#9662;</span></th>
+            <th data-key="payment">Pagamento<span class="arrow">&#9662;</span></th>
+            <th data-key="city">Cidade</th>
+            <th data-key="state">UF<span class="arrow">&#9662;</span></th>
+            <th data-key="seller">Vendedor<span class="arrow">&#9662;</span></th>
+            <th data-key="status">Status<span class="arrow">&#9662;</span></th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+    <div class="table-pagination" id="table-pagination"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Sobre este relatorio</h4>
+      <p>Panorama consolidado das vendas Porsche no periodo, preparado para apoiar a leitura comercial da diretoria: evolucao de receita, mix de modelos, distribuicao geografica, formas de pagamento e status de entrega.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Metodologia</h4>
+      <ul>
+        <li>Base: 100 vendas registradas no periodo analisado.</li>
+        <li>Nomes de vendedores padronizados (capitalizacao) para consistencia do relatorio.</li>
+        <li>Datas invalidas foram excluidas apenas da serie temporal (receita por trimestre).</li>
+        <li>Valores em USD, conforme moeda de referencia da base.</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Definicoes</h4>
+      <ul>
+        <li><strong>Entregue</strong>: pedido concluido e repassado ao cliente.</li>
+        <li><strong>Em andamento</strong>: pedido em qualquer etapa do funil (pendente, em transito, aguardando retirada/entrega).</li>
+        <li><strong>Ticket medio</strong>: receita total dividida pelo numero de vendas do recorte.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    <span>Helen &middot; Business Intelligence &amp; Controladoria &middot; 20/08/2026</span>
+    <span>Documento interno &middot; uso restrito a diretoria comercial</span>
+  </div>
+</footer>
+
+<div id="tooltip"></div>
+
+<script>
+
+const DATA = {"rows":[{"id":6,"date":"INVALID","model":"718 Cayman","year":2022,"price":79500.0,"mileage":9800,"payment":"Credit Card","city":"Boston","state":"MA","seller":"Kevin","status":"Delivered"},{"id":7,"date":"2024-03-14","model":"911 Turbo S","year":2024,"price":235000.0,"mileage":1200,"payment":"Wire Transfer","city":"Seattle","state":"WA","seller":"Amanda Scott","status":"Delivered"},{"id":8,"date":"2024-04-18","model":"Cayenne Coupe","year":2023,"price":112750.0,"mileage":6400,"payment":"Financing","city":"Austin","state":"TX","seller":"Brian Hall","status":"In Transit"},{"id":9,"date":"INVALID","model":"Macan S","year":2021,"price":68900.0,"mileage":28,"payment":"Cash","city":"Denver","state":"CO","seller":"Jessica","status":"Pending"},{"id":10,"date":"2024-05-22","model":"Taycan 4S","year":2024,"price":121000.0,"mileage":0,"payment":"Bank Transfer","city":"Los Angeles","state":"CA","seller":"Thomas King","status":"Delivered"},{"id":11,"date":"2024-08-06","model":"Panamera 4","year":2023,"price":104500.0,"mileage":14500,"payment":"Credit Card","city":"Miami","state":"FL","seller":"Lisa Ray","status":"Cancelled"},{"id":12,"date":"2024-07-11","model":"911 Carrera S","year":2020,"price":96300.0,"mileage":41000,"payment":"Lease","city":"New York","state":"NY","seller":"Mark Evans","status":"Delivered"},{"id":13,"date":"INVALID","model":"Cayenne E-Hybrid","year":2022,"price":89750.0,"mileage":11744,"payment":"Wire Transfer","city":"San Diego","state":"CA","seller":"Nancy Reed","status":"Pending Approval"},{"id":14,"date":"2024-08-19","model":"718 Boxster","year":2021,"price":73500.0,"mileage":22300,"payment":"Debit Card","city":"Chicago","state":"IL","seller":"George Bell","status":"Shipped"},{"id":15,"date":"2024-09-02","model":"Macan GTS","year":2024,"price":95000.0,"mileage":3500,"payment":"Financing","city":"Phoenix","state":"AZ","seller":"Helen Brooks","status":"In Transit"},{"id":16,"date":"2024-09-17","model":"Taycan Turbo","year":2023,"price":153200.5,"mileage":11,"payment":"ACH Payment","city":"Dallas","state":"TX","seller":"Samuel Price","status":"Delivered"},{"id":17,"date":"INVALID","model":"911 GT3","year":2024,"price":241000.0,"mileage":750,"payment":"Wire Transfer","city":"Las Vegas","state":"NV","seller":"Peter Ford","status":"Pending"},{"id":18,"date":"2024-05-11","model":"Panamera Turbo S","year":2022,"price":132000.0,"mileage":19250,"payment":"Cash","city":"San Jose","state":"CA","seller":"Angela Green","status":"Delivered"},{"id":19,"date":"2024-12-12","model":"Cayenne Turbo GT","year":2024,"price":188000.0,"mileage":2100,"payment":"Crypto Payment","city":"Houston","state":"TX","seller":"Victor Stone","status":"Awaiting Delivery"},{"id":20,"date":"2024-12-25","model":"911 Carrera Cabriolet","year":2023,"price":127800.0,"mileage":12000,"payment":"Credit Card","city":"Atlanta","state":"GA","seller":"Rachel Turner","status":"Delivered"},{"id":21,"date":"2025-01-06","model":"Macan","year":2021,"price":58900.0,"mileage":33700,"payment":"Bank Transfer","city":"Orlando","state":"FL","seller":"Chris Moore","status":"Pending"},{"id":22,"date":"INVALID","model":"718 Spyder RS","year":2024,"price":164000.0,"mileage":900,"payment":"Financing","city":"Portland","state":"OR","seller":"Laura Hill","status":"In Transit"},{"id":23,"date":"2025-02-14","model":"Taycan Cross Turismo","year":2023,"price":118500.0,"mileage":7800,"payment":"Wire Transfer","city":"Charlotte","state":"NC","seller":"Martin Young","status":"Delivered"},{"id":24,"date":"INVALID","model":"Cayenne S","year":2022,"price":91300.0,"mileage":16000,"payment":"Credit Card","city":"Nashville","state":"TN","seller":"Diana Cooper","status":"Pending"},{"id":25,"date":"2025-03-21","model":"911 Targa 4S","year":2024,"price":158750.0,"mileage":2500,"payment":"Lease","city":"Minneapolis","state":"MN","seller":"Steve Gray","status":"Delivered"},{"id":26,"date":"2025-03-28","model":"Panamera","year":2020,"price":72000.0,"mileage":49000,"payment":"Bank Transfer","city":"Philadelphia","state":"PA","seller":"Olivia Ross","status":"Cancelled"},{"id":27,"date":"2025-04-09","model":"Macan Electric","year":2025,"price":86500.0,"mileage":0,"payment":"Wire Transfer","city":"San Antonio","state":"TX","seller":"Patrick Wood","status":"Delivered"},{"id":28,"date":"INVALID","model":"911 Dakar","year":2024,"price":270000.0,"mileage":1050,"payment":"Cash","city":"Salt Lake City","state":"UT","seller":"Karen Diaz","status":"Awaiting Pickup"},{"id":29,"date":"2025-05-12","model":"Taycan GTS","year":2023,"price":139000.0,"mileage":6250,"payment":"Financing","city":"Raleigh","state":"NC","seller":"Justin Cox","status":"In Transit"},{"id":30,"date":"2025-06-18","model":"Cayenne","year":2021,"price":76800.0,"mileage":38400,"payment":"Credit Card","city":"Detroit","state":"MI","seller":"Betty Ward","status":"Delivered"},{"id":31,"date":"INVALID","model":"718 Cayman GT4 RS","year":2024,"price":173600.0,"mileage":400,"payment":"Wire Transfer","city":"Columbus","state":"OH","seller":"Gary Reed","status":"Pending"},{"id":32,"date":"2025-07-07","model":"911 Carrera GTS","year":2022,"price":119900.0,"mileage":13600,"payment":"Cash","city":"Indianapolis","state":"IN","seller":"Maria Foster","status":"Delivered"},{"id":33,"date":"2025-07-22","model":"Panamera 4 E-Hybrid","year":2023,"price":109250.0,"mileage":8900,"payment":"Lease","city":"Fort Worth","state":"TX","seller":"Harold Bennett","status":"In Transit"},{"id":34,"date":"2025-08-14","model":"Macan T","year":2022,"price":82000.0,"mileage":21750,"payment":"Wire Transfer","city":"Jacksonville","state":"FL","seller":"Teresa Cook","status":"Delivered"},{"id":35,"date":"2025-09-01","model":"Taycan Turbo S","year":2025,"price":214000.0,"mileage":0,"payment":"Crypto Payment","city":"San Diego","state":"CA","seller":"Frank Morgan","status":"Pending Review"},{"id":36,"date":"INVALID","model":"911 Carrera","year":2024,"price":124500.0,"mileage":4800,"payment":"Credit Card","city":"Tampa","state":"FL","seller":"Natalie","status":"Delivered"},{"id":37,"date":"2025-09-18","model":"Cayenne S","year":2023,"price":98200.0,"mileage":12200,"payment":"Bank Transfer","city":"Sacramento","state":"CA","seller":"Eric Woods","status":"Pending"},{"id":38,"date":"2025-10-04","model":"Macan","year":2022,"price":67500.0,"mileage":24100,"payment":"Financing","city":"Cleveland","state":"OH","seller":"Patricia Fox","status":"Delivered"},{"id":39,"date":"2025-10-12","model":"Taycan","year":2025,"price":116900.0,"mileage":0,"payment":"Wire Transfer","city":"Milwaukee","state":"WI","seller":"Alan Price","status":"In Transit"},{"id":40,"date":"2025-10-29","model":"Panamera 4S","year":2024,"price":112000.0,"mileage":10,"payment":"Cash","city":"Kansas City","state":"MO","seller":"Sandra Hill","status":"Delivered"},{"id":41,"date":"2025-02-11","model":"718 Boxster","year":2021,"price":74000.0,"mileage":31000,"payment":"Debit Card","city":"Omaha","state":"NE","seller":"Victor Lee","status":"Cancelled"},{"id":42,"date":"2025-11-16","model":"911 Turbo","year":2024,"price":198300.0,"mileage":2400,"payment":"Wire Transfer","city":"Albuquerque","state":"NM","seller":"Monica","status":"Awaiting Delivery"},{"id":43,"date":"INVALID","model":"Cayenne Coupe","year":2023,"price":103750.0,"mileage":6773,"payment":"Wire Transfer","city":"Tucson","state":"AZ","seller":"Gregory Adams","status":"Pending Approval"},{"id":44,"date":"INVALID","model":"Macan GTS","year":2024,"price":93600.0,"mileage":5800,"payment":"Financing","city":"Fresno","state":"CA","seller":"Laura West","status":"Shipped"},{"id":45,"date":"2025-12-07","model":"Taycan 4S","year":2025,"price":129000.0,"mileage":0,"payment":"ACH Payment","city":"Virginia Beach","state":"VA","seller":"Henry King","status":"In Transit"},{"id":46,"date":"2025-12-22","model":"Panamera Turbo","year":2022,"price":136000.0,"mileage":18400,"payment":"Credit Card","city":"Colorado Springs","state":"CO","seller":"Amber Clark","status":"Delivered"},{"id":47,"date":"INVALID","model":"911 GT3 RS","year":2024,"price":286500.0,"mileage":700,"payment":"Wire Transfer","city":"Arlington","state":"TX","seller":"Peter Lane","status":"Pending"},{"id":48,"date":"2026-01-08","model":"Cayenne E-Hybrid","year":2023,"price":92800.0,"mileage":15000,"payment":"Lease","city":"Bakersfield","state":"CA","seller":"Grace Morris","status":"Delivered"},{"id":49,"date":"2026-01-15","model":"Macan T","year":2022,"price":72400.0,"mileage":19750,"payment":"Cash","city":"Mesa","state":"AZ","seller":"Kyle Perry","status":"Awaiting Pickup"},{"id":50,"date":"2026-01-28","model":"Taycan Turbo","year":2025,"price":158500.0,"mileage":3200,"payment":"Crypto Payment","city":"Atlanta","state":"GA","seller":"Megan Reed","status":"Delivered"},{"id":51,"date":"2026-02-03","model":"718 Cayman","year":2021,"price":69900.0,"mileage":27600,"payment":"Bank Transfer","city":"Long Beach","state":"CA","seller":"Carl Simmons","status":"Pending"},{"id":52,"date":"INVALID","model":"911 Targa 4","year":2024,"price":141250.0,"mileage":2100,"payment":"Financing","city":"Oakland","state":"CA","seller":"Linda Cole","status":"In Transit"},{"id":53,"date":"2026-02-19","model":"Panamera","year":2020,"price":71500.0,"mileage":52000,"payment":"Wire Transfer","city":"Tulsa","state":"OK","seller":"Martin Brooks","status":"Delivered"},{"id":54,"date":"2026-02-25","model":"Cayenne Turbo","year":2023,"price":146800.0,"mileage":11300,"payment":"Credit Card","city":"Wichita","state":"KS","seller":"Diana Long","status":"Pending"},{"id":55,"date":"2026-03-01","model":"Macan Electric","year":2025,"price":89700.0,"mileage":0,"payment":"Lease","city":"New Orleans","state":"LA","seller":"Steve Ross","status":"Delivered"},{"id":56,"date":"2026-03-14","model":"911 Carrera S","year":2022,"price":104600.0,"mileage":15900,"payment":"Bank Transfer","city":"Honolulu","state":"HI","seller":"Olivia Cruz","status":"Cancelled"},{"id":57,"date":"INVALID","model":"Taycan GTS","year":2024,"price":142000.0,"mileage":6600,"payment":"Wire Transfer","city":"Anaheim","state":"CA","seller":"Patrick Wood","status":"Delivered"},{"id":58,"date":"2026-04-08","model":"Cayenne","year":2021,"price":78400.0,"mileage":40250,"payment":"Cash","city":"Henderson","state":"NV","seller":"Karen Stone","status":"Awaiting Review"},{"id":59,"date":"INVALID","model":"718 Spyder RS","year":2025,"price":169000.0,"mileage":850,"payment":"Financing","city":"Lexington","state":"KY","seller":"Justin Fox","status":"In Transit"},{"id":60,"date":"2026-04-21","model":"911 Dakar","year":2024,"price":268900.0,"mileage":1400,"payment":"Credit Card","city":"Riverside","state":"CA","seller":"Betty James","status":"Delivered"},{"id":61,"date":"2026-04-29","model":"Panamera 4","year":2023,"price":101300.0,"mileage":12700,"payment":"Wire Transfer","city":"Corpus Christi","state":"TX","seller":"Gary Price","status":"Pending"},{"id":62,"date":"2026-05-05","model":"Macan S","year":2021,"price":66750.0,"mileage":29800,"payment":"Cash","city":"St. Louis","state":"MO","seller":"Maria Green","status":"Delivered"},{"id":63,"date":"2026-05-14","model":"Taycan Cross Turismo","year":2024,"price":127900.0,"mileage":7500,"payment":"Lease","city":"Pittsburgh","state":"PA","seller":"Harold Young","status":"In Transit"},{"id":64,"date":"2026-05-23","model":"Cayenne Turbo GT","year":2025,"price":200000.0,"mileage":1950,"payment":"Wire Transfer","city":"Cincinnati","state":"OH","seller":"Teresa Ward","status":"Delivered"},{"id":65,"date":"2026-06-02","model":"911 Carrera Cabriolet","year":2023,"price":132000.0,"mileage":8800,"payment":"Crypto Payment","city":"Anchorage","state":"AK","seller":"Frank Reed","status":"Pending Review"},{"id":66,"date":"2026-06-15","model":"718 Cayman GT4 RS","year":2024,"price":176400.0,"mileage":600,"payment":"Credit Card","city":"Plano","state":"TX","seller":"Angela Moore","status":"Delivered"},{"id":67,"date":"INVALID","model":"Panamera 4 E-Hybrid","year":2022,"price":108500.0,"mileage":16200,"payment":"Bank Transfer","city":"Newark","state":"NJ","seller":"Rachel West","status":"Cancelled"},{"id":68,"date":"2026-07-07","model":"Macan","year":2021,"price":59000.0,"mileage":36000,"payment":"Financing","city":"Greensboro","state":"NC","seller":"Thomas Fox","status":"Awaiting Delivery"},{"id":69,"date":"2026-07-20","model":"Taycan Turbo S","year":2025,"price":218000.0,"mileage":0,"payment":"Wire Transfer","city":"Lincoln","state":"NE","seller":"Lisa Dunn","status":"Pending"},{"id":70,"date":"INVALID","model":"Cayenne S","year":2024,"price":99950.0,"mileage":5300,"payment":"Debit Card","city":"Jersey City","state":"NJ","seller":"Brian Allen","status":"Delivered"},{"id":71,"date":"2026-04-08","model":"911 Carrera GTS","year":2024,"price":121750.0,"mileage":5872,"payment":"Credit Card","city":"Chandler","state":"AZ","seller":"George Hall","status":"Delivered"},{"id":72,"date":"2026-08-18","model":"718 Boxster GTS","year":2023,"price":91500.0,"mileage":13300,"payment":"Lease","city":"Reno","state":"NV","seller":"Helen King","status":"Shipped"},{"id":73,"date":"2026-08-31","model":"Panamera Turbo S","year":2022,"price":134000.0,"mileage":20100,"payment":"Wire Transfer","city":"Buffalo","state":"NY","seller":"Samuel Price","status":"In Transit"},{"id":74,"date":"2026-09-09","model":"Macan GTS","year":2024,"price":96800.0,"mileage":0,"payment":"ACH Payment","city":"Durham","state":"NC","seller":"Peter Ford","status":"Delivered"},{"id":75,"date":"2026-09-17","model":"Taycan 4S","year":2025,"price":131600.0,"mileage":2900,"payment":"Wire Transfer","city":"Laredo","state":"TX","seller":"Angela Green","status":"Pending Approval"},{"id":76,"date":"2026-09-28","model":"Cayenne E-Hybrid","year":2023,"price":94300.0,"mileage":13100,"payment":"Cash","city":"Madison","state":"WI","seller":"Victor Stone","status":"Delivered"},{"id":77,"date":"2026-10-06","model":"911 Turbo S","year":2025,"price":242000.0,"mileage":1100,"payment":"Crypto Payment","city":"Lubbock","state":"TX","seller":"Rachel Turner","status":"Awaiting Pickup"},{"id":78,"date":"2026-10-16","model":"718 Cayman S","year":2022,"price":82750.0,"mileage":22500,"payment":"Credit Card","city":"Toledo","state":"OH","seller":"Chris Moore","status":"Cancelled"},{"id":79,"date":"2026-10-29","model":"Macan Electric","year":2026,"price":91300.0,"mileage":0,"payment":"Wire Transfer","city":"Irvine","state":"CA","seller":"Laura Hill","status":"Delivered"},{"id":80,"date":"2026-11-03","model":"Panamera","year":2021,"price":79900.0,"mileage":44800,"payment":"Financing","city":"Garland","state":"TX","seller":"Martin Young","status":"Pending"},{"id":81,"date":"INVALID","model":"Cayenne Coupe","year":2024,"price":111000.0,"mileage":6700,"payment":"Bank Transfer","city":"Irving","state":"TX","seller":"Diana Cooper","status":"In Transit"},{"id":82,"date":"2026-12-11","model":"911 Targa 4S","year":2023,"price":156500.0,"mileage":4200,"payment":"Cash","city":"Chesapeake","state":"VA","seller":"Steve Gray","status":"Delivered"},{"id":83,"date":"2026-12-24","model":"Taycan","year":2025,"price":119900.0,"mileage":1250,"payment":"Lease","city":"Scottsdale","state":"AZ","seller":"Olivia Ross","status":"Pending"},{"id":84,"date":"INVALID","model":"Macan T","year":2022,"price":73200.0,"mileage":18600,"payment":"Wire Transfer","city":"Norfolk","state":"VA","seller":"Patrick Wood","status":"Delivered"},{"id":85,"date":"2026-12-28","model":"911 GT3","year":2024,"price":224000.0,"mileage":3000,"payment":"Wire Transfer","city":"Boise","state":"ID","seller":"Karen Diaz","status":"Awaiting Delivery"},{"id":86,"date":"2027-01-15","model":"911 Carrera","year":2024,"price":126900.0,"mileage":7200,"payment":"Credit Card","city":"Orlando","state":"FL","seller":"Kevin Brown","status":"Delivered"},{"id":87,"date":"2027-01-29","model":"Cayenne","year":2023,"price":84500.0,"mileage":21400,"payment":"Bank Transfer","city":"San Jose","state":"CA","seller":"Amanda Lee","status":"Pending"},{"id":88,"date":"2027-02-11","model":"Macan S","year":2022,"price":69800.0,"mileage":26300,"payment":"Financing","city":"Tampa","state":"FL","seller":"Brian Hall","status":"Delivered"},{"id":89,"date":"INVALID","model":"Taycan 4S","year":2025,"price":132700.0,"mileage":0,"payment":"Wire Transfer","city":"Denver","state":"CO","seller":"Jessica White","status":"In Transit"},{"id":90,"date":"2027-03-05","model":"Panamera","year":2021,"price":81000.0,"mileage":42,"payment":"Cash","city":"Austin","state":"TX","seller":"Thomas King","status":"Delivered"},{"id":91,"date":"2027-03-18","model":"718 Cayman","year":2023,"price":78900.0,"mileage":17500,"payment":"Debit Card","city":"Seattle","state":"WA","seller":"Victor Lee","status":"Cancelled"},{"id":92,"date":"2027-04-02","model":"911 Turbo S","year":2026,"price":249300.0,"mileage":900,"payment":"Wire Transfer","city":"Boston","state":"MA","seller":"Monica Green","status":"Awaiting Delivery"},{"id":93,"date":"INVALID","model":"Cayenne Coupe","year":2024,"price":108750.0,"mileage":5530,"payment":"Wire Transfer","city":"Phoenix","state":"AZ","seller":"Gregory Adams","status":"Pending Approval"},{"id":94,"date":"INVALID","model":"Macan Electric","year":2026,"price":92600.0,"mileage":0,"payment":"Financing","city":"Chicago","state":"IL","seller":"Laura West","status":"Shipped"},{"id":95,"date":"2027-05-12","model":"Taycan Turbo","year":2025,"price":164000.0,"mileage":0,"payment":"ACH Payment","city":"Dallas","state":"TX","seller":"Henry King","status":"In Transit"},{"id":96,"date":"2027-05-27","model":"Panamera 4S","year":2024,"price":119000.0,"mileage":13400,"payment":"Credit Card","city":"San Francisco","state":"CA","seller":"Amber Clark","status":"Delivered"},{"id":97,"date":"INVALID","model":"911 GT3","year":2026,"price":232500.0,"mileage":1700,"payment":"Wire Transfer","city":"Las Vegas","state":"NV","seller":"Peter Lane","status":"Pending"},{"id":98,"date":"2027-06-18","model":"Cayenne E-Hybrid","year":2023,"price":96800.0,"mileage":14000,"payment":"Lease","city":"Charlotte","state":"NC","seller":"Grace Morris","status":"Delivered"},{"id":99,"date":"2027-07-03","model":"Macan T","year":2022,"price":74400.0,"mileage":20750,"payment":"Cash","city":"Mesa","state":"AZ","seller":"Kyle Perry","status":"Awaiting Pickup"},{"id":100,"date":"2027-07-22","model":"Taycan GTS","year":2025,"price":148500.0,"mileage":5200,"payment":"Crypto Payment","city":"Atlanta","state":"GA","seller":"Megan Reed","status":"Delivered"},{"id":101,"date":"2027-08-08","model":"718 Boxster","year":2021,"price":71900.0,"mileage":29600,"payment":"Bank Transfer","city":"Long Beach","state":"CA","seller":"Carl Simmons","status":"Pending"},{"id":102,"date":"INVALID","model":"911 Targa 4","year":2024,"price":143250.0,"mileage":3100,"payment":"Financing","city":"Oakland","state":"CA","seller":"Linda Cole","status":"In Transit"},{"id":103,"date":"2027-09-19","model":"Panamera Turbo","year":2020,"price":137500.0,"mileage":48000,"payment":"Wire Transfer","city":"Tulsa","state":"OK","seller":"Martin Brooks","status":"Delivered"},{"id":104,"date":"2027-09-25","model":"Cayenne Turbo GT","year":2025,"price":204800.0,"mileage":3300,"payment":"Credit Card","city":"Wichita","state":"KS","seller":"Diana Long","status":"Pending"},{"id":105,"date":"2027-10-01","model":"911 Dakar","year":2024,"price":271700.0,"mileage":1050,"payment":"Lease","city":"New Orleans","state":"LA","seller":"Steve Ross","status":"Delivered"}],"price_mileage_corr":-0.548};
+
+/* ---------------- helpers ---------------- */
+function fmtCurrency(v, compact){
+  if (compact){
+    const abs = Math.abs(v);
+    if (abs >= 1e6) return '$' + (v/1e6).toFixed(v>=1e7?1:2) + 'M';
+    if (abs >= 1e3) return '$' + (v/1e3).toFixed(1) + 'K';
+    return '$' + Math.round(v).toLocaleString('en-US');
+  }
+  return '$' + Math.round(v).toLocaleString('en-US');
+}
+function fmtNum(v){ return Math.round(v).toLocaleString('en-US'); }
+function fmtPct(v){ return v.toFixed(1) + '%'; }
+
+const FAMILY_ORDER = ['911','Taycan','Cayenne','Panamera','Macan','718 Cayman/Boxster'];
+function familyOf(model){
+  if (model.startsWith('911')) return '911';
+  if (model.startsWith('718')) return '718 Cayman/Boxster';
+  if (model.startsWith('Cayenne')) return 'Cayenne';
+  if (model.startsWith('Macan')) return 'Macan';
+  if (model.startsWith('Panamera')) return 'Panamera';
+  if (model.startsWith('Taycan')) return 'Taycan';
+  return 'Outro';
+}
+function statusBucket(status){
+  if (status === 'Delivered') return 'good';
+  if (status === 'Cancelled') return 'critical';
+  return 'warning';
+}
+function statusLabelPt(status){
+  const map = {
+    'Delivered':'Entregue','Cancelled':'Cancelado','Pending':'Pendente',
+    'In Transit':'Em transito','Awaiting Delivery':'Aguardando entrega',
+    'Awaiting Pickup':'Aguardando retirada','Shipped':'Enviado',
+    'Pending Approval':'Aguardando aprovacao','Pending Review':'Em revisao',
+    'Awaiting Review':'Aguardando revisao'
+  };
+  return map[status] || status;
+}
+function payLabelPt(p){ return p; }
+
+/* ---------------- tooltip ---------------- */
+const tooltipEl = document.getElementById('tooltip');
+function showTooltip(x, y, html){
+  tooltipEl.innerHTML = html;
+  tooltipEl.classList.add('show');
+  const rect = tooltipEl.getBoundingClientRect();
+  let left = x + 16, top = y - rect.height/2;
+  if (left + rect.width > window.innerWidth - 12) left = x - rect.width - 16;
+  if (top < 8) top = 8;
+  if (top + rect.height > window.innerHeight - 8) top = window.innerHeight - rect.height - 8;
+  tooltipEl.style.left = left + 'px';
+  tooltipEl.style.top = top + 'px';
+}
+function hideTooltip(){ tooltipEl.classList.remove('show'); }
+
+/* ---------------- state (filters) ---------------- */
+const state = { family: '', status: '', stateUF: '', search: '', sortKey: 'id', sortDir: 1, page: 1 };
+const PAGE_SIZE = 12;
+
+function filteredRows(){
+  return DATA.rows.filter(r => {
+    if (state.family && familyOf(r.model) !== state.family) return false;
+    if (state.status && statusBucket(r.status) !== state.status) return false;
+    if (state.stateUF && r.state !== state.stateUF) return false;
+    if (state.search){
+      const q = state.search.toLowerCase();
+      const hay = (r.model + ' ' + r.city + ' ' + r.state + ' ' + r.seller + ' ' + r.payment + ' ' + r.status).toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+/* ================= KPI ROW ================= */
+function renderKPIs(rows){
+  const revenue = rows.reduce((s,r)=>s+r.price,0);
+  const delivered = rows.filter(r=>r.status==='Delivered');
+  const cancelled = rows.filter(r=>r.status==='Cancelled');
+  const deliveredRevenue = delivered.reduce((s,r)=>s+r.price,0);
+  const avgTicket = rows.length ? revenue/rows.length : 0;
+  const deliveryRate = rows.length ? 100*delivered.length/rows.length : 0;
+  const cancelRate = rows.length ? 100*cancelled.length/rows.length : 0;
+  const avgMileage = rows.length ? rows.reduce((s,r)=>s+r.mileage,0)/rows.length : 0;
+
+  const tiles = [
+    {l:'Receita total', v: fmtCurrency(revenue, true), d: rows.length + ' vendas no recorte'},
+    {l:'Receita entregue', v: fmtCurrency(deliveredRevenue, true), d: fmtPct(deliveryRate) + ' das vendas entregues', hi:true},
+    {l:'Ticket medio', v: fmtCurrency(avgTicket, true), d: 'por veiculo vendido'},
+    {l:'Taxa de entrega', v: fmtPct(deliveryRate), d: delivered.length + ' de ' + rows.length + ' vendas'},
+    {l:'Taxa de cancelamento', v: fmtPct(cancelRate), d: cancelled.length + ' cancelamentos'},
+    {l:'Quilometragem media', v: fmtNum(avgMileage) + ' mi', d: 'nas unidades do recorte'},
+  ];
+  const el = document.getElementById('kpi-row');
+  el.innerHTML = tiles.map(t => `
+    <div class="kpi-tile ${t.hi?'hi':''}">
+      <div class="l">${t.l}</div>
+      <div class="v">${t.v}</div>
+      <div class="d">${t.d}</div>
+    </div>`).join('');
+}
+
+/* ================= H-BAR CHART ================= */
+function renderHBar(containerId, items, opts){
+  const container = document.getElementById(containerId);
+  const max = Math.max(...items.map(i=>i.value), 1);
+  container.innerHTML = '<div class="hbar-list"></div>';
+  const list = container.querySelector('.hbar-list');
+  items.forEach(item => {
+    const pct = Math.max((item.value/max*100), 2);
+    const row = document.createElement('div');
+    row.className = 'hbar-row';
+    const fillClass = item.statusClass ? ('hbar-fill status-' + item.statusClass) : 'hbar-fill';
+    row.innerHTML = `
+      <div class="lbl">${item.label}</div>
+      <div class="hbar-track"><div class="${fillClass}" style="width:${pct}%"></div></div>
+      <div class="hbar-val">${opts.formatValue(item.value)}</div>
+    `;
+    row.addEventListener('pointermove', (e) => {
+      showTooltip(e.clientX, e.clientY, `
+        <div class="tt-title">${item.label}</div>
+        <div class="tt-row"><span class="tt-key"><span class="ln"></span>${opts.valueLabel||'Valor'}</span><span class="tt-value">${opts.formatValue(item.value)}</span></div>
+        ${item.extra ? item.extra.map(x=>`<div class="tt-row"><span class="tt-key">${x.k}</span><span class="tt-value">${x.v}</span></div>`).join('') : ''}
+      `);
+    });
+    row.addEventListener('pointerleave', hideTooltip);
+    list.appendChild(row);
+  });
+}
+
+/* ================= TREND (line + area) chart, SVG ================= */
+function renderTrend(containerId, series){
+  const container = document.getElementById(containerId);
+  const W = 640, H = 230, padL = 46, padR = 16, padT = 16, padB = 30;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const maxY = Math.max(...series.map(d=>d.revenue)) * 1.12;
+  const n = series.length;
+  const x = i => padL + (n===1 ? plotW/2 : (i/(n-1))*plotW);
+  const y = v => padT + plotH - (v/maxY)*plotH;
+
+  let gridLines = '';
+  const ticks = 4;
+  for (let t=0;t<=ticks;t++){
+    const val = (maxY/ticks)*t;
+    const yy = y(val);
+    gridLines += `<line class="gridline" x1="${padL}" x2="${W-padR}" y1="${yy}" y2="${yy}"></line>`;
+    gridLines += `<text class="axis-label" x="${padL-8}" y="${yy+3}" text-anchor="end">${fmtCurrency(val,true)}</text>`;
+  }
+
+  let path = 'M ' + series.map((d,i)=>`${x(i)},${y(d.revenue)}`).join(' L ');
+  let areaPath = `M ${x(0)},${y(0)} L ` + series.map((d,i)=>`${x(i)},${y(d.revenue)}`).join(' L ') + ` L ${x(n-1)},${y(0)} Z`;
+
+  let dots = '', hits = '', labels = '';
+  series.forEach((d,i) => {
+    dots += `<circle class="pt-dot" cx="${x(i)}" cy="${y(d.revenue)}" r="4"></circle>`;
+    hits += `<circle class="pt-hit" data-i="${i}" cx="${x(i)}" cy="${y(d.revenue)}" r="14"></circle>`;
+  });
+  // x labels: show every other if crowded
+  const showEvery = n > 10 ? 2 : 1;
+  const lastMod = (n-1) % showEvery;
+  series.forEach((d,i) => {
+    if (i % showEvery === lastMod){
+      labels += `<text class="axis-label" x="${x(i)}" y="${H-8}" text-anchor="middle">${d.q}</text>`;
+    }
+  });
+
+  container.innerHTML = `
+    <svg class="svg-chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
+      ${gridLines}
+      <path class="area-fill" d="${areaPath}"></path>
+      <path class="line-path" d="${path}"></path>
+      ${dots}
+      <line class="crosshair" id="crosshair-${containerId}" x1="0" x2="0" y1="${padT}" y2="${padT+plotH}" style="opacity:0"></line>
+      ${hits}
+      ${labels}
+    </svg>
+  `;
+  const svg = container.querySelector('svg');
+  const crosshair = container.querySelector('#crosshair-' + containerId);
+  container.querySelectorAll('.pt-hit').forEach(hit => {
+    hit.addEventListener('pointermove', (e) => {
+      const i = +hit.getAttribute('data-i');
+      const d = series[i];
+      const pt = svg.createSVGPoint();
+      const ctm = svg.getScreenCTM();
+      crosshair.setAttribute('x1', x(i)); crosshair.setAttribute('x2', x(i));
+      crosshair.style.opacity = 1;
+      showTooltip(e.clientX, e.clientY, `
+        <div class="tt-title">${d.q}</div>
+        <div class="tt-row"><span class="tt-key"><span class="ln"></span>Receita</span><span class="tt-value">${fmtCurrency(d.revenue,true)}</span></div>
+        <div class="tt-row"><span class="tt-key">Vendas</span><span class="tt-value">${d.units}</span></div>
+      `);
+    });
+    hit.addEventListener('pointerleave', () => { crosshair.style.opacity = 0; hideTooltip(); });
+  });
+}
+
+/* ================= SCATTER ================= */
+function renderScatter(containerId, points){
+  const container = document.getElementById(containerId);
+  const W = 320, H = 230, padL = 44, padR = 14, padT = 14, padB = 30;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const maxX = Math.max(...points.map(p=>p.mileage)) * 1.08 || 1;
+  const maxY = Math.max(...points.map(p=>p.price)) * 1.08 || 1;
+  const x = v => padL + (v/maxX)*plotW;
+  const y = v => padT + plotH - (v/maxY)*plotH;
+
+  let grid = '';
+  for (let t=0;t<=3;t++){
+    const val = (maxY/3)*t;
+    const yy = y(val);
+    grid += `<line class="gridline" x1="${padL}" x2="${W-padR}" y1="${yy}" y2="${yy}"></line>`;
+    grid += `<text class="axis-label" x="${padL-6}" y="${yy+3}" text-anchor="end">${fmtCurrency(val,true)}</text>`;
+  }
+  grid += `<text class="axis-label" x="${padL}" y="${H-8}" text-anchor="start">0 mi</text>`;
+  grid += `<text class="axis-label" x="${W-padR}" y="${H-8}" text-anchor="end">${fmtNum(maxX)} mi</text>`;
+
+  let dots = '';
+  points.forEach((p,i) => {
+    dots += `<circle class="scatter-dot" data-i="${i}" cx="${x(p.mileage)}" cy="${y(p.price)}" r="4.2"></circle>`;
+  });
+
+  container.innerHTML = `<svg class="svg-chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${grid}${dots}</svg>`;
+  container.querySelectorAll('.scatter-dot').forEach(dot => {
+    dot.addEventListener('pointermove', (e) => {
+      const i = +dot.getAttribute('data-i');
+      const p = points[i];
+      dot.classList.add('hover');
+      showTooltip(e.clientX, e.clientY, `
+        <div class="tt-title">${p.model}</div>
+        <div class="tt-row"><span class="tt-key"><span class="ln"></span>Preco</span><span class="tt-value">${fmtCurrency(p.price,true)}</span></div>
+        <div class="tt-row"><span class="tt-key">Quilometragem</span><span class="tt-value">${fmtNum(p.mileage)} mi</span></div>
+        <div class="tt-row"><span class="tt-key">Ano</span><span class="tt-value">${p.year}</span></div>
+      `);
+    });
+    dot.addEventListener('pointerleave', () => { dot.classList.remove('hover'); hideTooltip(); });
+  });
+}
+
+/* ================= INSIGHTS ================= */
+function renderInsights(rows){
+  const el = document.getElementById('insights-grid');
+  if (!rows.length){ el.innerHTML = '<div class="insight-card"><p>Nenhum registro no recorte atual.</p></div>'; return; }
+
+  const revenue = rows.reduce((s,r)=>s+r.price,0);
+  const byFamily = {};
+  rows.forEach(r => { const f = familyOf(r.model); byFamily[f] = (byFamily[f]||0) + r.price; });
+  const topFamily = Object.entries(byFamily).sort((a,b)=>b[1]-a[1])[0];
+
+  const byState = {};
+  rows.forEach(r => { byState[r.state] = (byState[r.state]||0) + r.price; });
+  const topState = Object.entries(byState).sort((a,b)=>b[1]-a[1])[0];
+  const byStateUnits = {};
+  rows.forEach(r => { byStateUnits[r.state] = (byStateUnits[r.state]||0) + 1; });
+  const topStateUnits = Object.entries(byStateUnits).sort((a,b)=>b[1]-a[1])[0];
+
+  const newCars = rows.filter(r=>r.mileage===0).length;
+  const cancelled = rows.filter(r=>r.status==='Cancelled');
+  const cancelledRevenue = cancelled.reduce((s,r)=>s+r.price,0);
+  const wireTransfer = rows.filter(r=>r.payment==='Wire Transfer');
+  const pipeline = rows.filter(r=>r.status!=='Delivered' && r.status!=='Cancelled');
+  const pipelineRevenue = pipeline.reduce((s,r)=>s+r.price,0);
+
+  const byQ = {};
+  rows.forEach(r => {
+    if (r.date === 'INVALID') return;
+    const q = r.date.slice(0,4) + 'Q' + (Math.floor((+r.date.slice(5,7)-1)/3)+1);
+    if (!byQ[q]) byQ[q] = {q, revenue:0, units:0};
+    byQ[q].revenue += r.price; byQ[q].units += 1;
+  });
+  const qs = Object.values(byQ).sort((a,b)=>a.q.localeCompare(b.q));
+  const peakQ = qs.length ? qs.reduce((a,b)=> b.revenue>a.revenue?b:a) : null;
+
+  const cards = [
+    {tag:'Portfolio', cls:'', html:`<strong>${topFamily[0]}</strong> lidera a receita do recorte com ${fmtCurrency(topFamily[1],true)}, a familia mais valiosa entre as seis analisadas.`},
+    {tag:'Geografia', cls:'gold', html:`<strong>${topState[0]}</strong> e o estado com maior receita (${fmtCurrency(topState[1],true)}), enquanto <strong>${topStateUnits[0]}</strong> lidera em volume (${topStateUnits[1]} vendas) &mdash; sinal de perfis de cliente diferentes por regiao.`},
+    {tag:'Correlacao', cls:'', html:`Preco e quilometragem tem correlacao de <strong>${DATA.price_mileage_corr}</strong>: veiculos com menos milhas rodadas tendem a custar mais, coerente com um mercado de seminovos de baixa quilometragem.`},
+    {tag:'Estoque zero-km', cls:'gold', html:`<strong>${newCars}</strong> vendas do recorte (${fmtPct(100*newCars/rows.length)}) sao de veiculos com quilometragem zero &mdash; unidades 0km ou de mostruario.`},
+    {tag:'Risco', cls:'warn', html:`Cancelamentos representam <strong>${fmtCurrency(cancelledRevenue,true)}</strong> em receita perdida (${cancelled.length} pedidos) &mdash; vale investigar a causa raiz junto ao time comercial.`},
+    {tag:'Pagamento', cls:'', html:`<strong>Wire Transfer</strong> e o metodo mais usado (${wireTransfer.length} vendas), tipico de tickets altos e clientes internacionais/institucionais.`},
+    {tag:'Pipeline', cls:'warn', html:`${pipeline.length} pedidos (${fmtPct(100*pipeline.length/rows.length)}) ainda estao em andamento, somando <strong>${fmtCurrency(pipelineRevenue,true)}</strong> em receita a realizar nos proximos ciclos.`},
+    {tag:'Tendencia', cls:'gold', html: peakQ ? `O melhor trimestre do periodo foi <strong>${peakQ.q}</strong>, com ${fmtCurrency(peakQ.revenue,true)} em receita e ${peakQ.units} vendas.` : 'Sem dados suficientes de data para leitura de tendencia neste recorte.'},
+  ];
+  el.innerHTML = cards.map(c => `
+    <div class="insight-card ${c.cls}">
+      <div class="tag">${c.tag}</div>
+      <p>${c.html}</p>
+    </div>`).join('');
+}
+
+/* ================= TABLE ================= */
+function renderTable(){
+  let rows = filteredRows();
+  if (state.sortKey){
+    rows = rows.slice().sort((a,b) => {
+      let av = a[state.sortKey], bv = b[state.sortKey];
+      if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase(); }
+      if (av < bv) return -1*state.sortDir;
+      if (av > bv) return 1*state.sortDir;
+      return 0;
+    });
+  }
+  const total = rows.length;
+  const totalPages = Math.max(1, Math.ceil(total/PAGE_SIZE));
+  if (state.page > totalPages) state.page = totalPages;
+  const startIdx = (state.page-1)*PAGE_SIZE;
+  const pageRows = rows.slice(startIdx, startIdx+PAGE_SIZE);
+
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = pageRows.map(r => `
+    <tr>
+      <td>#${r.id}</td>
+      <td>${r.date === 'INVALID' ? '<span style="color:var(--critical)">invalida</span>' : r.date}</td>
+      <td>${r.model}</td>
+      <td>${r.year}</td>
+      <td class="price">${fmtCurrency(r.price)}</td>
+      <td>${fmtNum(r.mileage)}</td>
+      <td>${r.payment}</td>
+      <td>${r.city}</td>
+      <td>${r.state}</td>
+      <td>${r.seller}</td>
+      <td><span class="status-pill st-${statusBucket(r.status)}">${statusLabelPt(r.status)}</span></td>
+    </tr>
+  `).join('');
+
+  document.getElementById('table-meta').textContent = `${total} registro${total===1?'':'s'} no recorte`;
+
+  const pag = document.getElementById('table-pagination');
+  pag.innerHTML = `
+    <button id="pg-prev" ${state.page<=1?'disabled':''}>&larr; Anterior</button>
+    <span>Pagina ${state.page} de ${totalPages}</span>
+    <button id="pg-next" ${state.page>=totalPages?'disabled':''}>Proxima &rarr;</button>
+  `;
+  document.getElementById('pg-prev').addEventListener('click', () => { state.page--; renderTable(); });
+  document.getElementById('pg-next').addEventListener('click', () => { state.page++; renderTable(); });
+
+  document.querySelectorAll('table.data-table th').forEach(th => {
+    th.classList.toggle('sorted', th.getAttribute('data-key') === state.sortKey);
+    const arrow = th.querySelector('.arrow');
+    if (arrow && th.getAttribute('data-key') === state.sortKey) arrow.innerHTML = state.sortDir===1 ? '&#9662;' : '&#9652;';
+  });
+}
+
+/* ================= MASTER RENDER ================= */
+function renderAll(){
+  const rows = filteredRows();
+
+  renderKPIs(rows);
+
+  // trend: recompute quarterly from filtered rows with valid dates
+  const byQ = {};
+  rows.forEach(r => {
+    if (r.date === 'INVALID') return;
+    const q = r.date.slice(0,4) + 'Q' + (Math.floor((+r.date.slice(5,7)-1)/3)+1);
+    if (!byQ[q]) byQ[q] = {q, revenue:0, units:0};
+    byQ[q].revenue += r.price; byQ[q].units += 1;
+  });
+  const trendSeries = Object.values(byQ).sort((a,b)=>a.q.localeCompare(b.q));
+  renderTrend('chart-trend', trendSeries.length ? trendSeries : [{q:'-',revenue:0,units:0}]);
+
+  renderScatter('chart-scatter', rows.map(r => ({model:r.model, price:r.price, mileage:r.mileage, year:r.year})));
+
+  const famAgg = {};
+  rows.forEach(r => { const f = familyOf(r.model); if(!famAgg[f]) famAgg[f]={revenue:0,units:0}; famAgg[f].revenue+=r.price; famAgg[f].units+=1; });
+  const famItems = FAMILY_ORDER.filter(f=>famAgg[f]).map(f => ({label:f, value:famAgg[f].revenue, extra:[{k:'Unidades', v: famAgg[f].units}]}));
+  renderHBar('chart-family', famItems, {formatValue: v=>fmtCurrency(v,true), valueLabel:'Receita'});
+
+  const stAgg = {};
+  rows.forEach(r => { if(!stAgg[r.state]) stAgg[r.state]={revenue:0,units:0}; stAgg[r.state].revenue+=r.price; stAgg[r.state].units+=1; });
+  const stItems = Object.entries(stAgg).sort((a,b)=>b[1].revenue-a[1].revenue).slice(0,8).map(([k,v]) => ({label:k, value:v.revenue, extra:[{k:'Unidades', v: v.units}]}));
+  renderHBar('chart-state', stItems, {formatValue: v=>fmtCurrency(v,true), valueLabel:'Receita'});
+
+  const payAgg = {};
+  rows.forEach(r => { if(!payAgg[r.payment]) payAgg[r.payment]={revenue:0,units:0}; payAgg[r.payment].revenue+=r.price; payAgg[r.payment].units+=1; });
+  const payItems = Object.entries(payAgg).sort((a,b)=>b[1].revenue-a[1].revenue).map(([k,v]) => ({label:k, value:v.revenue, extra:[{k:'Unidades', v: v.units}]}));
+  renderHBar('chart-payment', payItems, {formatValue: v=>fmtCurrency(v,true), valueLabel:'Receita'});
+
+  const statAgg = {};
+  rows.forEach(r => { if(!statAgg[r.status]) statAgg[r.status]={units:0,revenue:0}; statAgg[r.status].units+=1; statAgg[r.status].revenue+=r.price; });
+  const statItems = Object.entries(statAgg).sort((a,b)=>b[1].units-a[1].units).map(([k,v]) => ({label:statusLabelPt(k), value:v.units, statusClass:statusBucket(k), extra:[{k:'Receita', v: fmtCurrency(v.revenue,true)}]}));
+  renderHBar('chart-status', statItems, {formatValue: v=>v+' vendas', valueLabel:'Vendas'});
+
+  const sellAgg = {};
+  rows.forEach(r => { if(!sellAgg[r.seller]) sellAgg[r.seller]={revenue:0,units:0}; sellAgg[r.seller].revenue+=r.price; sellAgg[r.seller].units+=1; });
+  const sellItems = Object.entries(sellAgg).sort((a,b)=>b[1].revenue-a[1].revenue).slice(0,8).map(([k,v]) => ({label:k, value:v.revenue, extra:[{k:'Vendas', v: v.units}]}));
+  renderHBar('chart-sales', sellItems, {formatValue: v=>fmtCurrency(v,true), valueLabel:'Receita'});
+
+  renderInsights(rows);
+
+  const noteParts = [];
+  if (state.family) noteParts.push('familia ' + state.family);
+  if (state.status) noteParts.push('status ' + state.status);
+  if (state.stateUF) noteParts.push('estado ' + state.stateUF);
+  document.getElementById('scope-note').textContent = noteParts.length ? ('Filtrando por: ' + noteParts.join(', ')) : '';
+
+  state.page = 1;
+  renderTable();
+}
+
+/* ================= INIT ================= */
+function init(){
+  // populate filter selects
+  const familySel = document.getElementById('f-family');
+  FAMILY_ORDER.forEach(f => {
+    const o = document.createElement('option'); o.value = f; o.textContent = f; familySel.appendChild(o);
+  });
+  const statusSel = document.getElementById('f-status');
+  [['good','Entregue'],['warning','Em andamento'],['critical','Cancelado']].forEach(([v,l]) => {
+    const o = document.createElement('option'); o.value = v; o.textContent = l; statusSel.appendChild(o);
+  });
+  const stateSel = document.getElementById('f-state');
+  const states = [...new Set(DATA.rows.map(r=>r.state))].sort();
+  states.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; stateSel.appendChild(o); });
+
+  familySel.addEventListener('change', e => { state.family = e.target.value; renderAll(); });
+  statusSel.addEventListener('change', e => { state.status = e.target.value; renderAll(); });
+  stateSel.addEventListener('change', e => { state.stateUF = e.target.value; renderAll(); });
+  document.getElementById('f-reset').addEventListener('click', () => {
+    state.family=''; state.status=''; state.stateUF='';
+    familySel.value=''; statusSel.value=''; stateSel.value='';
+    renderAll();
+  });
+
+  document.getElementById('table-search').addEventListener('input', e => {
+    state.search = e.target.value; state.page = 1; renderTable();
+  });
+
+  document.querySelectorAll('table.data-table th').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.getAttribute('data-key');
+      if (state.sortKey === key) state.sortDir *= -1;
+      else { state.sortKey = key; state.sortDir = 1; }
+      renderTable();
+    });
+  });
+
+  renderAll();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+
+</script>
+</body>
+</html>

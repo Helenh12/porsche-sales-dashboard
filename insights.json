@@ -1,0 +1,2771 @@
+{
+  "kpis": {
+    "total_sales": 100,
+    "total_revenue": 12827800.5,
+    "delivered_revenue": 5078800.5,
+    "pipeline_revenue": 7123750.0,
+    "cancelled_revenue": 625250.0,
+    "avg_ticket": 128278.005,
+    "median_ticket": 114825.0,
+    "max_sale": 286500.0,
+    "min_sale": 58900.0,
+    "delivered_count": 41,
+    "cancelled_count": 7,
+    "pipeline_count": 52,
+    "delivery_rate": 41.0,
+    "cancel_rate": 7.0,
+    "avg_mileage": 11422.1,
+    "new_car_count": 12,
+    "unique_models": 40,
+    "unique_states": 33,
+    "unique_salespeople": 70
+  },
+  "by_model": [
+    {
+      "model": "911 Dakar",
+      "revenue": 810600.0,
+      "units": 3,
+      "avg_price": 270200.0
+    },
+    {
+      "model": "911 Turbo S",
+      "revenue": 726300.0,
+      "units": 3,
+      "avg_price": 242100.0
+    },
+    {
+      "model": "911 GT3",
+      "revenue": 697500.0,
+      "units": 3,
+      "avg_price": 232500.0
+    },
+    {
+      "model": "Cayenne Turbo GT",
+      "revenue": 592800.0,
+      "units": 3,
+      "avg_price": 197600.0
+    },
+    {
+      "model": "Taycan 4S",
+      "revenue": 514300.0,
+      "units": 4,
+      "avg_price": 128575.0
+    },
+    {
+      "model": "Taycan Turbo",
+      "revenue": 475700.5,
+      "units": 3,
+      "avg_price": 158566.8
+    },
+    {
+      "model": "Cayenne Coupe",
+      "revenue": 436250.0,
+      "units": 4,
+      "avg_price": 109062.5
+    },
+    {
+      "model": "Taycan Turbo S",
+      "revenue": 432000.0,
+      "units": 2,
+      "avg_price": 216000.0
+    },
+    {
+      "model": "Taycan GTS",
+      "revenue": 429500.0,
+      "units": 3,
+      "avg_price": 143166.7
+    },
+    {
+      "model": "Cayenne E-Hybrid",
+      "revenue": 373650.0,
+      "units": 4,
+      "avg_price": 93412.5
+    },
+    {
+      "model": "Macan Electric",
+      "revenue": 360100.0,
+      "units": 4,
+      "avg_price": 90025.0
+    },
+    {
+      "model": "718 Cayman GT4 RS",
+      "revenue": 350000.0,
+      "units": 2,
+      "avg_price": 175000.0
+    }
+  ],
+  "by_family": [
+    {
+      "family": "911",
+      "revenue": 4272700.0,
+      "units": 23,
+      "avg_price": 185769.6
+    },
+    {
+      "family": "Taycan",
+      "revenue": 2334700.5,
+      "units": 16,
+      "avg_price": 145918.8
+    },
+    {
+      "family": "Cayenne",
+      "revenue": 2078650.0,
+      "units": 18,
+      "avg_price": 115480.6
+    },
+    {
+      "family": "Panamera",
+      "revenue": 1498450.0,
+      "units": 14,
+      "avg_price": 107032.1
+    },
+    {
+      "family": "Macan",
+      "revenue": 1338350.0,
+      "units": 17,
+      "avg_price": 78726.5
+    },
+    {
+      "family": "718 Cayman/Boxster",
+      "revenue": 1304950.0,
+      "units": 12,
+      "avg_price": 108745.8
+    }
+  ],
+  "by_state": [
+    {
+      "state": "TX",
+      "revenue": 2023400.5,
+      "units": 14,
+      "avg_price": 144528.6
+    },
+    {
+      "state": "CA",
+      "revenue": 1973350.0,
+      "units": 16,
+      "avg_price": 123334.4
+    },
+    {
+      "state": "AZ",
+      "revenue": 695950.0,
+      "units": 7,
+      "avg_price": 99421.4
+    },
+    {
+      "state": "NV",
+      "revenue": 643400.0,
+      "units": 4,
+      "avg_price": 160850.0
+    },
+    {
+      "state": "FL",
+      "revenue": 566600.0,
+      "units": 6,
+      "avg_price": 94433.3
+    },
+    {
+      "state": "OH",
+      "revenue": 523850.0,
+      "units": 4,
+      "avg_price": 130962.5
+    },
+    {
+      "state": "NC",
+      "revenue": 510100.0,
+      "units": 5,
+      "avg_price": 102020.0
+    },
+    {
+      "state": "GA",
+      "revenue": 434800.0,
+      "units": 3,
+      "avg_price": 144933.3
+    },
+    {
+      "state": "LA",
+      "revenue": 361400.0,
+      "units": 2,
+      "avg_price": 180700.0
+    },
+    {
+      "state": "VA",
+      "revenue": 358700.0,
+      "units": 3,
+      "avg_price": 119566.7
+    },
+    {
+      "state": "KS",
+      "revenue": 351600.0,
+      "units": 2,
+      "avg_price": 175800.0
+    },
+    {
+      "state": "CO",
+      "revenue": 337600.0,
+      "units": 3,
+      "avg_price": 112533.3
+    }
+  ],
+  "by_city": [
+    {
+      "city": "Las Vegas",
+      "state": "NV",
+      "revenue": 473500.0,
+      "units": 2
+    },
+    {
+      "city": "Atlanta",
+      "state": "GA",
+      "revenue": 434800.0,
+      "units": 3
+    },
+    {
+      "city": "New Orleans",
+      "state": "LA",
+      "revenue": 361400.0,
+      "units": 2
+    },
+    {
+      "city": "Wichita",
+      "state": "KS",
+      "revenue": 351600.0,
+      "units": 2
+    },
+    {
+      "city": "Boston",
+      "state": "MA",
+      "revenue": 328800.0,
+      "units": 2
+    },
+    {
+      "city": "Dallas",
+      "state": "TX",
+      "revenue": 317200.5,
+      "units": 2
+    },
+    {
+      "city": "Seattle",
+      "state": "WA",
+      "revenue": 313900.0,
+      "units": 2
+    },
+    {
+      "city": "San Diego",
+      "state": "CA",
+      "revenue": 303750.0,
+      "units": 2
+    },
+    {
+      "city": "Arlington",
+      "state": "TX",
+      "revenue": 286500.0,
+      "units": 1
+    },
+    {
+      "city": "Oakland",
+      "state": "CA",
+      "revenue": 284500.0,
+      "units": 2
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2024-03",
+      "revenue": 235000.0,
+      "units": 1
+    },
+    {
+      "month": "2024-04",
+      "revenue": 112750.0,
+      "units": 1
+    },
+    {
+      "month": "2024-05",
+      "revenue": 253000.0,
+      "units": 2
+    },
+    {
+      "month": "2024-07",
+      "revenue": 96300.0,
+      "units": 1
+    },
+    {
+      "month": "2024-08",
+      "revenue": 178000.0,
+      "units": 2
+    },
+    {
+      "month": "2024-09",
+      "revenue": 248200.5,
+      "units": 2
+    },
+    {
+      "month": "2024-12",
+      "revenue": 315800.0,
+      "units": 2
+    },
+    {
+      "month": "2025-01",
+      "revenue": 58900.0,
+      "units": 1
+    },
+    {
+      "month": "2025-02",
+      "revenue": 192500.0,
+      "units": 2
+    },
+    {
+      "month": "2025-03",
+      "revenue": 230750.0,
+      "units": 2
+    },
+    {
+      "month": "2025-04",
+      "revenue": 86500.0,
+      "units": 1
+    },
+    {
+      "month": "2025-05",
+      "revenue": 139000.0,
+      "units": 1
+    },
+    {
+      "month": "2025-06",
+      "revenue": 76800.0,
+      "units": 1
+    },
+    {
+      "month": "2025-07",
+      "revenue": 229150.0,
+      "units": 2
+    },
+    {
+      "month": "2025-08",
+      "revenue": 82000.0,
+      "units": 1
+    },
+    {
+      "month": "2025-09",
+      "revenue": 312200.0,
+      "units": 2
+    },
+    {
+      "month": "2025-10",
+      "revenue": 296400.0,
+      "units": 3
+    },
+    {
+      "month": "2025-11",
+      "revenue": 198300.0,
+      "units": 1
+    },
+    {
+      "month": "2025-12",
+      "revenue": 265000.0,
+      "units": 2
+    },
+    {
+      "month": "2026-01",
+      "revenue": 323700.0,
+      "units": 3
+    },
+    {
+      "month": "2026-02",
+      "revenue": 288200.0,
+      "units": 3
+    },
+    {
+      "month": "2026-03",
+      "revenue": 194300.0,
+      "units": 2
+    },
+    {
+      "month": "2026-04",
+      "revenue": 570350.0,
+      "units": 4
+    },
+    {
+      "month": "2026-05",
+      "revenue": 394650.0,
+      "units": 3
+    },
+    {
+      "month": "2026-06",
+      "revenue": 308400.0,
+      "units": 2
+    },
+    {
+      "month": "2026-07",
+      "revenue": 277000.0,
+      "units": 2
+    },
+    {
+      "month": "2026-08",
+      "revenue": 225500.0,
+      "units": 2
+    },
+    {
+      "month": "2026-09",
+      "revenue": 322700.0,
+      "units": 3
+    },
+    {
+      "month": "2026-10",
+      "revenue": 416050.0,
+      "units": 3
+    },
+    {
+      "month": "2026-11",
+      "revenue": 79900.0,
+      "units": 1
+    },
+    {
+      "month": "2026-12",
+      "revenue": 500400.0,
+      "units": 3
+    },
+    {
+      "month": "2027-01",
+      "revenue": 211400.0,
+      "units": 2
+    },
+    {
+      "month": "2027-02",
+      "revenue": 69800.0,
+      "units": 1
+    },
+    {
+      "month": "2027-03",
+      "revenue": 159900.0,
+      "units": 2
+    },
+    {
+      "month": "2027-04",
+      "revenue": 249300.0,
+      "units": 1
+    },
+    {
+      "month": "2027-05",
+      "revenue": 283000.0,
+      "units": 2
+    },
+    {
+      "month": "2027-06",
+      "revenue": 96800.0,
+      "units": 1
+    },
+    {
+      "month": "2027-07",
+      "revenue": 222900.0,
+      "units": 2
+    },
+    {
+      "month": "2027-08",
+      "revenue": 71900.0,
+      "units": 1
+    },
+    {
+      "month": "2027-09",
+      "revenue": 342300.0,
+      "units": 2
+    },
+    {
+      "month": "2027-10",
+      "revenue": 271700.0,
+      "units": 1
+    }
+  ],
+  "invalid_dates_count": 24,
+  "by_payment": [
+    {
+      "payment": "Wire Transfer",
+      "revenue": 3979450.0,
+      "units": 26
+    },
+    {
+      "payment": "Credit Card",
+      "revenue": 1987700.0,
+      "units": 15
+    },
+    {
+      "payment": "Financing",
+      "revenue": 1426650.0,
+      "units": 13
+    },
+    {
+      "payment": "Cash",
+      "revenue": 1326550.0,
+      "units": 12
+    },
+    {
+      "payment": "Lease",
+      "revenue": 1254600.0,
+      "units": 10
+    },
+    {
+      "payment": "Crypto Payment",
+      "revenue": 1083000.0,
+      "units": 6
+    },
+    {
+      "payment": "Bank Transfer",
+      "revenue": 900500.0,
+      "units": 10
+    },
+    {
+      "payment": "ACH Payment",
+      "revenue": 543000.5,
+      "units": 4
+    },
+    {
+      "payment": "Debit Card",
+      "revenue": 326350.0,
+      "units": 4
+    }
+  ],
+  "by_status": [
+    {
+      "status": "Delivered",
+      "revenue": 5078800.5,
+      "units": 41
+    },
+    {
+      "status": "Pending",
+      "revenue": 2347900.0,
+      "units": 17
+    },
+    {
+      "status": "In Transit",
+      "revenue": 1989000.0,
+      "units": 15
+    },
+    {
+      "status": "Cancelled",
+      "revenue": 625250.0,
+      "units": 7
+    },
+    {
+      "status": "Awaiting Delivery",
+      "revenue": 918600.0,
+      "units": 5
+    },
+    {
+      "status": "Awaiting Pickup",
+      "revenue": 658800.0,
+      "units": 4
+    },
+    {
+      "status": "Shipped",
+      "revenue": 351200.0,
+      "units": 4
+    },
+    {
+      "status": "Pending Approval",
+      "revenue": 433850.0,
+      "units": 4
+    },
+    {
+      "status": "Pending Review",
+      "revenue": 346000.0,
+      "units": 2
+    },
+    {
+      "status": "Awaiting Review",
+      "revenue": 78400.0,
+      "units": 1
+    }
+  ],
+  "by_model_year": [
+    {
+      "year": 2020,
+      "revenue": 377300.0,
+      "units": 4,
+      "avg_price": 94325.0
+    },
+    {
+      "year": 2021,
+      "revenue": 858950.0,
+      "units": 12,
+      "avg_price": 71579.2
+    },
+    {
+      "year": 2022,
+      "revenue": 1517600.0,
+      "units": 16,
+      "avg_price": 94850.0
+    },
+    {
+      "year": 2023,
+      "revenue": 2142350.5,
+      "units": 19,
+      "avg_price": 112755.3
+    },
+    {
+      "year": 2024,
+      "revenue": 4740800.0,
+      "units": 29,
+      "avg_price": 163475.9
+    },
+    {
+      "year": 2025,
+      "revenue": 2525100.0,
+      "units": 16,
+      "avg_price": 157818.8
+    },
+    {
+      "year": 2026,
+      "revenue": 665700.0,
+      "units": 4,
+      "avg_price": 166425.0
+    }
+  ],
+  "by_salesperson": [
+    {
+      "seller": "Peter Lane",
+      "revenue": 519000.0,
+      "units": 2,
+      "delivered": 0
+    },
+    {
+      "seller": "Karen Diaz",
+      "revenue": 494000.0,
+      "units": 2,
+      "delivered": 0
+    },
+    {
+      "seller": "Rachel Turner",
+      "revenue": 369800.0,
+      "units": 2,
+      "delivered": 1
+    },
+    {
+      "seller": "Steve Ross",
+      "revenue": 361400.0,
+      "units": 2,
+      "delivered": 2
+    },
+    {
+      "seller": "Diana Long",
+      "revenue": 351600.0,
+      "units": 2,
+      "delivered": 0
+    },
+    {
+      "seller": "Peter Ford",
+      "revenue": 337800.0,
+      "units": 2,
+      "delivered": 1
+    },
+    {
+      "seller": "Steve Gray",
+      "revenue": 315250.0,
+      "units": 2,
+      "delivered": 2
+    },
+    {
+      "seller": "Megan Reed",
+      "revenue": 307000.0,
+      "units": 2,
+      "delivered": 2
+    },
+    {
+      "seller": "Patrick Wood",
+      "revenue": 301700.0,
+      "units": 3,
+      "delivered": 3
+    },
+    {
+      "seller": "Henry King",
+      "revenue": 293000.0,
+      "units": 2,
+      "delivered": 0
+    }
+  ],
+  "scatter": [
+    {
+      "model": "718 Cayman",
+      "family": "718 Cayman/Boxster",
+      "price": 79500.0,
+      "mileage": 9800,
+      "year": 2022
+    },
+    {
+      "model": "911 Turbo S",
+      "family": "911",
+      "price": 235000.0,
+      "mileage": 1200,
+      "year": 2024
+    },
+    {
+      "model": "Cayenne Coupe",
+      "family": "Cayenne",
+      "price": 112750.0,
+      "mileage": 6400,
+      "year": 2023
+    },
+    {
+      "model": "Macan S",
+      "family": "Macan",
+      "price": 68900.0,
+      "mileage": 28,
+      "year": 2021
+    },
+    {
+      "model": "Taycan 4S",
+      "family": "Taycan",
+      "price": 121000.0,
+      "mileage": 0,
+      "year": 2024
+    },
+    {
+      "model": "Panamera 4",
+      "family": "Panamera",
+      "price": 104500.0,
+      "mileage": 14500,
+      "year": 2023
+    },
+    {
+      "model": "911 Carrera S",
+      "family": "911",
+      "price": 96300.0,
+      "mileage": 41000,
+      "year": 2020
+    },
+    {
+      "model": "Cayenne E-Hybrid",
+      "family": "Cayenne",
+      "price": 89750.0,
+      "mileage": 11744,
+      "year": 2022
+    },
+    {
+      "model": "718 Boxster",
+      "family": "718 Cayman/Boxster",
+      "price": 73500.0,
+      "mileage": 22300,
+      "year": 2021
+    },
+    {
+      "model": "Macan GTS",
+      "family": "Macan",
+      "price": 95000.0,
+      "mileage": 3500,
+      "year": 2024
+    },
+    {
+      "model": "Taycan Turbo",
+      "family": "Taycan",
+      "price": 153200.5,
+      "mileage": 11,
+      "year": 2023
+    },
+    {
+      "model": "911 GT3",
+      "family": "911",
+      "price": 241000.0,
+      "mileage": 750,
+      "year": 2024
+    },
+    {
+      "model": "Panamera Turbo S",
+      "family": "Panamera",
+      "price": 132000.0,
+      "mileage": 19250,
+      "year": 2022
+    },
+    {
+      "model": "Cayenne Turbo GT",
+      "family": "Cayenne",
+      "price": 188000.0,
+      "mileage": 2100,
+      "year": 2024
+    },
+    {
+      "model": "911 Carrera Cabriolet",
+      "family": "911",
+      "price": 127800.0,
+      "mileage": 12000,
+      "year": 2023
+    },
+    {
+      "model": "Macan",
+      "family": "Macan",
+      "price": 58900.0,
+      "mileage": 33700,
+      "year": 2021
+    },
+    {
+      "model": "718 Spyder RS",
+      "family": "718 Cayman/Boxster",
+      "price": 164000.0,
+      "mileage": 900,
+      "year": 2024
+    },
+    {
+      "model": "Taycan Cross Turismo",
+      "family": "Taycan",
+      "price": 118500.0,
+      "mileage": 7800,
+      "year": 2023
+    },
+    {
+      "model": "Cayenne S",
+      "family": "Cayenne",
+      "price": 91300.0,
+      "mileage": 16000,
+      "year": 2022
+    },
+    {
+      "model": "911 Targa 4S",
+      "family": "911",
+      "price": 158750.0,
+      "mileage": 2500,
+      "year": 2024
+    },
+    {
+      "model": "Panamera",
+      "family": "Panamera",
+      "price": 72000.0,
+      "mileage": 49000,
+      "year": 2020
+    },
+    {
+      "model": "Macan Electric",
+      "family": "Macan",
+      "price": 86500.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "911 Dakar",
+      "family": "911",
+      "price": 270000.0,
+      "mileage": 1050,
+      "year": 2024
+    },
+    {
+      "model": "Taycan GTS",
+      "family": "Taycan",
+      "price": 139000.0,
+      "mileage": 6250,
+      "year": 2023
+    },
+    {
+      "model": "Cayenne",
+      "family": "Cayenne",
+      "price": 76800.0,
+      "mileage": 38400,
+      "year": 2021
+    },
+    {
+      "model": "718 Cayman GT4 RS",
+      "family": "718 Cayman/Boxster",
+      "price": 173600.0,
+      "mileage": 400,
+      "year": 2024
+    },
+    {
+      "model": "911 Carrera GTS",
+      "family": "911",
+      "price": 119900.0,
+      "mileage": 13600,
+      "year": 2022
+    },
+    {
+      "model": "Panamera 4 E-Hybrid",
+      "family": "Panamera",
+      "price": 109250.0,
+      "mileage": 8900,
+      "year": 2023
+    },
+    {
+      "model": "Macan T",
+      "family": "Macan",
+      "price": 82000.0,
+      "mileage": 21750,
+      "year": 2022
+    },
+    {
+      "model": "Taycan Turbo S",
+      "family": "Taycan",
+      "price": 214000.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "911 Carrera",
+      "family": "911",
+      "price": 124500.0,
+      "mileage": 4800,
+      "year": 2024
+    },
+    {
+      "model": "Cayenne S",
+      "family": "Cayenne",
+      "price": 98200.0,
+      "mileage": 12200,
+      "year": 2023
+    },
+    {
+      "model": "Macan",
+      "family": "Macan",
+      "price": 67500.0,
+      "mileage": 24100,
+      "year": 2022
+    },
+    {
+      "model": "Taycan",
+      "family": "Taycan",
+      "price": 116900.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "Panamera 4S",
+      "family": "Panamera",
+      "price": 112000.0,
+      "mileage": 10,
+      "year": 2024
+    },
+    {
+      "model": "718 Boxster",
+      "family": "718 Cayman/Boxster",
+      "price": 74000.0,
+      "mileage": 31000,
+      "year": 2021
+    },
+    {
+      "model": "911 Turbo",
+      "family": "911",
+      "price": 198300.0,
+      "mileage": 2400,
+      "year": 2024
+    },
+    {
+      "model": "Cayenne Coupe",
+      "family": "Cayenne",
+      "price": 103750.0,
+      "mileage": 6773,
+      "year": 2023
+    },
+    {
+      "model": "Macan GTS",
+      "family": "Macan",
+      "price": 93600.0,
+      "mileage": 5800,
+      "year": 2024
+    },
+    {
+      "model": "Taycan 4S",
+      "family": "Taycan",
+      "price": 129000.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "Panamera Turbo",
+      "family": "Panamera",
+      "price": 136000.0,
+      "mileage": 18400,
+      "year": 2022
+    },
+    {
+      "model": "911 GT3 RS",
+      "family": "911",
+      "price": 286500.0,
+      "mileage": 700,
+      "year": 2024
+    },
+    {
+      "model": "Cayenne E-Hybrid",
+      "family": "Cayenne",
+      "price": 92800.0,
+      "mileage": 15000,
+      "year": 2023
+    },
+    {
+      "model": "Macan T",
+      "family": "Macan",
+      "price": 72400.0,
+      "mileage": 19750,
+      "year": 2022
+    },
+    {
+      "model": "Taycan Turbo",
+      "family": "Taycan",
+      "price": 158500.0,
+      "mileage": 3200,
+      "year": 2025
+    },
+    {
+      "model": "718 Cayman",
+      "family": "718 Cayman/Boxster",
+      "price": 69900.0,
+      "mileage": 27600,
+      "year": 2021
+    },
+    {
+      "model": "911 Targa 4",
+      "family": "911",
+      "price": 141250.0,
+      "mileage": 2100,
+      "year": 2024
+    },
+    {
+      "model": "Panamera",
+      "family": "Panamera",
+      "price": 71500.0,
+      "mileage": 52000,
+      "year": 2020
+    },
+    {
+      "model": "Cayenne Turbo",
+      "family": "Cayenne",
+      "price": 146800.0,
+      "mileage": 11300,
+      "year": 2023
+    },
+    {
+      "model": "Macan Electric",
+      "family": "Macan",
+      "price": 89700.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "911 Carrera S",
+      "family": "911",
+      "price": 104600.0,
+      "mileage": 15900,
+      "year": 2022
+    },
+    {
+      "model": "Taycan GTS",
+      "family": "Taycan",
+      "price": 142000.0,
+      "mileage": 6600,
+      "year": 2024
+    },
+    {
+      "model": "Cayenne",
+      "family": "Cayenne",
+      "price": 78400.0,
+      "mileage": 40250,
+      "year": 2021
+    },
+    {
+      "model": "718 Spyder RS",
+      "family": "718 Cayman/Boxster",
+      "price": 169000.0,
+      "mileage": 850,
+      "year": 2025
+    },
+    {
+      "model": "911 Dakar",
+      "family": "911",
+      "price": 268900.0,
+      "mileage": 1400,
+      "year": 2024
+    },
+    {
+      "model": "Panamera 4",
+      "family": "Panamera",
+      "price": 101300.0,
+      "mileage": 12700,
+      "year": 2023
+    },
+    {
+      "model": "Macan S",
+      "family": "Macan",
+      "price": 66750.0,
+      "mileage": 29800,
+      "year": 2021
+    },
+    {
+      "model": "Taycan Cross Turismo",
+      "family": "Taycan",
+      "price": 127900.0,
+      "mileage": 7500,
+      "year": 2024
+    },
+    {
+      "model": "Cayenne Turbo GT",
+      "family": "Cayenne",
+      "price": 200000.0,
+      "mileage": 1950,
+      "year": 2025
+    },
+    {
+      "model": "911 Carrera Cabriolet",
+      "family": "911",
+      "price": 132000.0,
+      "mileage": 8800,
+      "year": 2023
+    },
+    {
+      "model": "718 Cayman GT4 RS",
+      "family": "718 Cayman/Boxster",
+      "price": 176400.0,
+      "mileage": 600,
+      "year": 2024
+    },
+    {
+      "model": "Panamera 4 E-Hybrid",
+      "family": "Panamera",
+      "price": 108500.0,
+      "mileage": 16200,
+      "year": 2022
+    },
+    {
+      "model": "Macan",
+      "family": "Macan",
+      "price": 59000.0,
+      "mileage": 36000,
+      "year": 2021
+    },
+    {
+      "model": "Taycan Turbo S",
+      "family": "Taycan",
+      "price": 218000.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "Cayenne S",
+      "family": "Cayenne",
+      "price": 99950.0,
+      "mileage": 5300,
+      "year": 2024
+    },
+    {
+      "model": "911 Carrera GTS",
+      "family": "911",
+      "price": 121750.0,
+      "mileage": 5872,
+      "year": 2024
+    },
+    {
+      "model": "718 Boxster GTS",
+      "family": "718 Cayman/Boxster",
+      "price": 91500.0,
+      "mileage": 13300,
+      "year": 2023
+    },
+    {
+      "model": "Panamera Turbo S",
+      "family": "Panamera",
+      "price": 134000.0,
+      "mileage": 20100,
+      "year": 2022
+    },
+    {
+      "model": "Macan GTS",
+      "family": "Macan",
+      "price": 96800.0,
+      "mileage": 0,
+      "year": 2024
+    },
+    {
+      "model": "Taycan 4S",
+      "family": "Taycan",
+      "price": 131600.0,
+      "mileage": 2900,
+      "year": 2025
+    },
+    {
+      "model": "Cayenne E-Hybrid",
+      "family": "Cayenne",
+      "price": 94300.0,
+      "mileage": 13100,
+      "year": 2023
+    },
+    {
+      "model": "911 Turbo S",
+      "family": "911",
+      "price": 242000.0,
+      "mileage": 1100,
+      "year": 2025
+    },
+    {
+      "model": "718 Cayman S",
+      "family": "718 Cayman/Boxster",
+      "price": 82750.0,
+      "mileage": 22500,
+      "year": 2022
+    },
+    {
+      "model": "Macan Electric",
+      "family": "Macan",
+      "price": 91300.0,
+      "mileage": 0,
+      "year": 2026
+    },
+    {
+      "model": "Panamera",
+      "family": "Panamera",
+      "price": 79900.0,
+      "mileage": 44800,
+      "year": 2021
+    },
+    {
+      "model": "Cayenne Coupe",
+      "family": "Cayenne",
+      "price": 111000.0,
+      "mileage": 6700,
+      "year": 2024
+    },
+    {
+      "model": "911 Targa 4S",
+      "family": "911",
+      "price": 156500.0,
+      "mileage": 4200,
+      "year": 2023
+    },
+    {
+      "model": "Taycan",
+      "family": "Taycan",
+      "price": 119900.0,
+      "mileage": 1250,
+      "year": 2025
+    },
+    {
+      "model": "Macan T",
+      "family": "Macan",
+      "price": 73200.0,
+      "mileage": 18600,
+      "year": 2022
+    },
+    {
+      "model": "911 GT3",
+      "family": "911",
+      "price": 224000.0,
+      "mileage": 3000,
+      "year": 2024
+    },
+    {
+      "model": "911 Carrera",
+      "family": "911",
+      "price": 126900.0,
+      "mileage": 7200,
+      "year": 2024
+    },
+    {
+      "model": "Cayenne",
+      "family": "Cayenne",
+      "price": 84500.0,
+      "mileage": 21400,
+      "year": 2023
+    },
+    {
+      "model": "Macan S",
+      "family": "Macan",
+      "price": 69800.0,
+      "mileage": 26300,
+      "year": 2022
+    },
+    {
+      "model": "Taycan 4S",
+      "family": "Taycan",
+      "price": 132700.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "Panamera",
+      "family": "Panamera",
+      "price": 81000.0,
+      "mileage": 42,
+      "year": 2021
+    },
+    {
+      "model": "718 Cayman",
+      "family": "718 Cayman/Boxster",
+      "price": 78900.0,
+      "mileage": 17500,
+      "year": 2023
+    },
+    {
+      "model": "911 Turbo S",
+      "family": "911",
+      "price": 249300.0,
+      "mileage": 900,
+      "year": 2026
+    },
+    {
+      "model": "Cayenne Coupe",
+      "family": "Cayenne",
+      "price": 108750.0,
+      "mileage": 5530,
+      "year": 2024
+    },
+    {
+      "model": "Macan Electric",
+      "family": "Macan",
+      "price": 92600.0,
+      "mileage": 0,
+      "year": 2026
+    },
+    {
+      "model": "Taycan Turbo",
+      "family": "Taycan",
+      "price": 164000.0,
+      "mileage": 0,
+      "year": 2025
+    },
+    {
+      "model": "Panamera 4S",
+      "family": "Panamera",
+      "price": 119000.0,
+      "mileage": 13400,
+      "year": 2024
+    },
+    {
+      "model": "911 GT3",
+      "family": "911",
+      "price": 232500.0,
+      "mileage": 1700,
+      "year": 2026
+    },
+    {
+      "model": "Cayenne E-Hybrid",
+      "family": "Cayenne",
+      "price": 96800.0,
+      "mileage": 14000,
+      "year": 2023
+    },
+    {
+      "model": "Macan T",
+      "family": "Macan",
+      "price": 74400.0,
+      "mileage": 20750,
+      "year": 2022
+    },
+    {
+      "model": "Taycan GTS",
+      "family": "Taycan",
+      "price": 148500.0,
+      "mileage": 5200,
+      "year": 2025
+    },
+    {
+      "model": "718 Boxster",
+      "family": "718 Cayman/Boxster",
+      "price": 71900.0,
+      "mileage": 29600,
+      "year": 2021
+    },
+    {
+      "model": "911 Targa 4",
+      "family": "911",
+      "price": 143250.0,
+      "mileage": 3100,
+      "year": 2024
+    },
+    {
+      "model": "Panamera Turbo",
+      "family": "Panamera",
+      "price": 137500.0,
+      "mileage": 48000,
+      "year": 2020
+    },
+    {
+      "model": "Cayenne Turbo GT",
+      "family": "Cayenne",
+      "price": 204800.0,
+      "mileage": 3300,
+      "year": 2025
+    },
+    {
+      "model": "911 Dakar",
+      "family": "911",
+      "price": 271700.0,
+      "mileage": 1050,
+      "year": 2024
+    }
+  ],
+  "price_mileage_corr": -0.548,
+  "rows": [
+    {
+      "id": 6,
+      "date": "INVALID",
+      "model": "718 Cayman",
+      "year": 2022,
+      "price": 79500.0,
+      "mileage": 9800,
+      "payment": "Credit Card",
+      "city": "Boston",
+      "state": "MA",
+      "seller": "Kevin",
+      "status": "Delivered"
+    },
+    {
+      "id": 7,
+      "date": "2024-03-14",
+      "model": "911 Turbo S",
+      "year": 2024,
+      "price": 235000.0,
+      "mileage": 1200,
+      "payment": "Wire Transfer",
+      "city": "Seattle",
+      "state": "WA",
+      "seller": "Amanda Scott",
+      "status": "Delivered"
+    },
+    {
+      "id": 8,
+      "date": "2024-04-18",
+      "model": "Cayenne Coupe",
+      "year": 2023,
+      "price": 112750.0,
+      "mileage": 6400,
+      "payment": "Financing",
+      "city": "Austin",
+      "state": "TX",
+      "seller": "Brian Hall",
+      "status": "In Transit"
+    },
+    {
+      "id": 9,
+      "date": "INVALID",
+      "model": "Macan S",
+      "year": 2021,
+      "price": 68900.0,
+      "mileage": 28,
+      "payment": "Cash",
+      "city": "Denver",
+      "state": "CO",
+      "seller": "Jessica",
+      "status": "Pending"
+    },
+    {
+      "id": 10,
+      "date": "2024-05-22",
+      "model": "Taycan 4S",
+      "year": 2024,
+      "price": 121000.0,
+      "mileage": 0,
+      "payment": "Bank Transfer",
+      "city": "Los Angeles",
+      "state": "CA",
+      "seller": "Thomas King",
+      "status": "Delivered"
+    },
+    {
+      "id": 11,
+      "date": "2024-08-06",
+      "model": "Panamera 4",
+      "year": 2023,
+      "price": 104500.0,
+      "mileage": 14500,
+      "payment": "Credit Card",
+      "city": "Miami",
+      "state": "FL",
+      "seller": "Lisa Ray",
+      "status": "Cancelled"
+    },
+    {
+      "id": 12,
+      "date": "2024-07-11",
+      "model": "911 Carrera S",
+      "year": 2020,
+      "price": 96300.0,
+      "mileage": 41000,
+      "payment": "Lease",
+      "city": "New York",
+      "state": "NY",
+      "seller": "Mark Evans",
+      "status": "Delivered"
+    },
+    {
+      "id": 13,
+      "date": "INVALID",
+      "model": "Cayenne E-Hybrid",
+      "year": 2022,
+      "price": 89750.0,
+      "mileage": 11744,
+      "payment": "Wire Transfer",
+      "city": "San Diego",
+      "state": "CA",
+      "seller": "Nancy Reed",
+      "status": "Pending Approval"
+    },
+    {
+      "id": 14,
+      "date": "2024-08-19",
+      "model": "718 Boxster",
+      "year": 2021,
+      "price": 73500.0,
+      "mileage": 22300,
+      "payment": "Debit Card",
+      "city": "Chicago",
+      "state": "IL",
+      "seller": "George Bell",
+      "status": "Shipped"
+    },
+    {
+      "id": 15,
+      "date": "2024-09-02",
+      "model": "Macan GTS",
+      "year": 2024,
+      "price": 95000.0,
+      "mileage": 3500,
+      "payment": "Financing",
+      "city": "Phoenix",
+      "state": "AZ",
+      "seller": "Helen Brooks",
+      "status": "In Transit"
+    },
+    {
+      "id": 16,
+      "date": "2024-09-17",
+      "model": "Taycan Turbo",
+      "year": 2023,
+      "price": 153200.5,
+      "mileage": 11,
+      "payment": "ACH Payment",
+      "city": "Dallas",
+      "state": "TX",
+      "seller": "Samuel Price",
+      "status": "Delivered"
+    },
+    {
+      "id": 17,
+      "date": "INVALID",
+      "model": "911 GT3",
+      "year": 2024,
+      "price": 241000.0,
+      "mileage": 750,
+      "payment": "Wire Transfer",
+      "city": "Las Vegas",
+      "state": "NV",
+      "seller": "Peter Ford",
+      "status": "Pending"
+    },
+    {
+      "id": 18,
+      "date": "2024-05-11",
+      "model": "Panamera Turbo S",
+      "year": 2022,
+      "price": 132000.0,
+      "mileage": 19250,
+      "payment": "Cash",
+      "city": "San Jose",
+      "state": "CA",
+      "seller": "Angela Green",
+      "status": "Delivered"
+    },
+    {
+      "id": 19,
+      "date": "2024-12-12",
+      "model": "Cayenne Turbo GT",
+      "year": 2024,
+      "price": 188000.0,
+      "mileage": 2100,
+      "payment": "Crypto Payment",
+      "city": "Houston",
+      "state": "TX",
+      "seller": "Victor Stone",
+      "status": "Awaiting Delivery"
+    },
+    {
+      "id": 20,
+      "date": "2024-12-25",
+      "model": "911 Carrera Cabriolet",
+      "year": 2023,
+      "price": 127800.0,
+      "mileage": 12000,
+      "payment": "Credit Card",
+      "city": "Atlanta",
+      "state": "GA",
+      "seller": "Rachel Turner",
+      "status": "Delivered"
+    },
+    {
+      "id": 21,
+      "date": "2025-01-06",
+      "model": "Macan",
+      "year": 2021,
+      "price": 58900.0,
+      "mileage": 33700,
+      "payment": "Bank Transfer",
+      "city": "Orlando",
+      "state": "FL",
+      "seller": "Chris Moore",
+      "status": "Pending"
+    },
+    {
+      "id": 22,
+      "date": "INVALID",
+      "model": "718 Spyder RS",
+      "year": 2024,
+      "price": 164000.0,
+      "mileage": 900,
+      "payment": "Financing",
+      "city": "Portland",
+      "state": "OR",
+      "seller": "Laura Hill",
+      "status": "In Transit"
+    },
+    {
+      "id": 23,
+      "date": "2025-02-14",
+      "model": "Taycan Cross Turismo",
+      "year": 2023,
+      "price": 118500.0,
+      "mileage": 7800,
+      "payment": "Wire Transfer",
+      "city": "Charlotte",
+      "state": "NC",
+      "seller": "Martin Young",
+      "status": "Delivered"
+    },
+    {
+      "id": 24,
+      "date": "INVALID",
+      "model": "Cayenne S",
+      "year": 2022,
+      "price": 91300.0,
+      "mileage": 16000,
+      "payment": "Credit Card",
+      "city": "Nashville",
+      "state": "TN",
+      "seller": "Diana Cooper",
+      "status": "Pending"
+    },
+    {
+      "id": 25,
+      "date": "2025-03-21",
+      "model": "911 Targa 4S",
+      "year": 2024,
+      "price": 158750.0,
+      "mileage": 2500,
+      "payment": "Lease",
+      "city": "Minneapolis",
+      "state": "MN",
+      "seller": "Steve Gray",
+      "status": "Delivered"
+    },
+    {
+      "id": 26,
+      "date": "2025-03-28",
+      "model": "Panamera",
+      "year": 2020,
+      "price": 72000.0,
+      "mileage": 49000,
+      "payment": "Bank Transfer",
+      "city": "Philadelphia",
+      "state": "PA",
+      "seller": "Olivia Ross",
+      "status": "Cancelled"
+    },
+    {
+      "id": 27,
+      "date": "2025-04-09",
+      "model": "Macan Electric",
+      "year": 2025,
+      "price": 86500.0,
+      "mileage": 0,
+      "payment": "Wire Transfer",
+      "city": "San Antonio",
+      "state": "TX",
+      "seller": "Patrick Wood",
+      "status": "Delivered"
+    },
+    {
+      "id": 28,
+      "date": "INVALID",
+      "model": "911 Dakar",
+      "year": 2024,
+      "price": 270000.0,
+      "mileage": 1050,
+      "payment": "Cash",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "seller": "Karen Diaz",
+      "status": "Awaiting Pickup"
+    },
+    {
+      "id": 29,
+      "date": "2025-05-12",
+      "model": "Taycan GTS",
+      "year": 2023,
+      "price": 139000.0,
+      "mileage": 6250,
+      "payment": "Financing",
+      "city": "Raleigh",
+      "state": "NC",
+      "seller": "Justin Cox",
+      "status": "In Transit"
+    },
+    {
+      "id": 30,
+      "date": "2025-06-18",
+      "model": "Cayenne",
+      "year": 2021,
+      "price": 76800.0,
+      "mileage": 38400,
+      "payment": "Credit Card",
+      "city": "Detroit",
+      "state": "MI",
+      "seller": "Betty Ward",
+      "status": "Delivered"
+    },
+    {
+      "id": 31,
+      "date": "INVALID",
+      "model": "718 Cayman GT4 RS",
+      "year": 2024,
+      "price": 173600.0,
+      "mileage": 400,
+      "payment": "Wire Transfer",
+      "city": "Columbus",
+      "state": "OH",
+      "seller": "Gary Reed",
+      "status": "Pending"
+    },
+    {
+      "id": 32,
+      "date": "2025-07-07",
+      "model": "911 Carrera GTS",
+      "year": 2022,
+      "price": 119900.0,
+      "mileage": 13600,
+      "payment": "Cash",
+      "city": "Indianapolis",
+      "state": "IN",
+      "seller": "Maria Foster",
+      "status": "Delivered"
+    },
+    {
+      "id": 33,
+      "date": "2025-07-22",
+      "model": "Panamera 4 E-Hybrid",
+      "year": 2023,
+      "price": 109250.0,
+      "mileage": 8900,
+      "payment": "Lease",
+      "city": "Fort Worth",
+      "state": "TX",
+      "seller": "Harold Bennett",
+      "status": "In Transit"
+    },
+    {
+      "id": 34,
+      "date": "2025-08-14",
+      "model": "Macan T",
+      "year": 2022,
+      "price": 82000.0,
+      "mileage": 21750,
+      "payment": "Wire Transfer",
+      "city": "Jacksonville",
+      "state": "FL",
+      "seller": "Teresa Cook",
+      "status": "Delivered"
+    },
+    {
+      "id": 35,
+      "date": "2025-09-01",
+      "model": "Taycan Turbo S",
+      "year": 2025,
+      "price": 214000.0,
+      "mileage": 0,
+      "payment": "Crypto Payment",
+      "city": "San Diego",
+      "state": "CA",
+      "seller": "Frank Morgan",
+      "status": "Pending Review"
+    },
+    {
+      "id": 36,
+      "date": "INVALID",
+      "model": "911 Carrera",
+      "year": 2024,
+      "price": 124500.0,
+      "mileage": 4800,
+      "payment": "Credit Card",
+      "city": "Tampa",
+      "state": "FL",
+      "seller": "Natalie",
+      "status": "Delivered"
+    },
+    {
+      "id": 37,
+      "date": "2025-09-18",
+      "model": "Cayenne S",
+      "year": 2023,
+      "price": 98200.0,
+      "mileage": 12200,
+      "payment": "Bank Transfer",
+      "city": "Sacramento",
+      "state": "CA",
+      "seller": "Eric Woods",
+      "status": "Pending"
+    },
+    {
+      "id": 38,
+      "date": "2025-10-04",
+      "model": "Macan",
+      "year": 2022,
+      "price": 67500.0,
+      "mileage": 24100,
+      "payment": "Financing",
+      "city": "Cleveland",
+      "state": "OH",
+      "seller": "Patricia Fox",
+      "status": "Delivered"
+    },
+    {
+      "id": 39,
+      "date": "2025-10-12",
+      "model": "Taycan",
+      "year": 2025,
+      "price": 116900.0,
+      "mileage": 0,
+      "payment": "Wire Transfer",
+      "city": "Milwaukee",
+      "state": "WI",
+      "seller": "Alan Price",
+      "status": "In Transit"
+    },
+    {
+      "id": 40,
+      "date": "2025-10-29",
+      "model": "Panamera 4S",
+      "year": 2024,
+      "price": 112000.0,
+      "mileage": 10,
+      "payment": "Cash",
+      "city": "Kansas City",
+      "state": "MO",
+      "seller": "Sandra Hill",
+      "status": "Delivered"
+    },
+    {
+      "id": 41,
+      "date": "2025-02-11",
+      "model": "718 Boxster",
+      "year": 2021,
+      "price": 74000.0,
+      "mileage": 31000,
+      "payment": "Debit Card",
+      "city": "Omaha",
+      "state": "NE",
+      "seller": "Victor Lee",
+      "status": "Cancelled"
+    },
+    {
+      "id": 42,
+      "date": "2025-11-16",
+      "model": "911 Turbo",
+      "year": 2024,
+      "price": 198300.0,
+      "mileage": 2400,
+      "payment": "Wire Transfer",
+      "city": "Albuquerque",
+      "state": "NM",
+      "seller": "Monica",
+      "status": "Awaiting Delivery"
+    },
+    {
+      "id": 43,
+      "date": "INVALID",
+      "model": "Cayenne Coupe",
+      "year": 2023,
+      "price": 103750.0,
+      "mileage": 6773,
+      "payment": "Wire Transfer",
+      "city": "Tucson",
+      "state": "AZ",
+      "seller": "Gregory Adams",
+      "status": "Pending Approval"
+    },
+    {
+      "id": 44,
+      "date": "INVALID",
+      "model": "Macan GTS",
+      "year": 2024,
+      "price": 93600.0,
+      "mileage": 5800,
+      "payment": "Financing",
+      "city": "Fresno",
+      "state": "CA",
+      "seller": "Laura West",
+      "status": "Shipped"
+    },
+    {
+      "id": 45,
+      "date": "2025-12-07",
+      "model": "Taycan 4S",
+      "year": 2025,
+      "price": 129000.0,
+      "mileage": 0,
+      "payment": "ACH Payment",
+      "city": "Virginia Beach",
+      "state": "VA",
+      "seller": "Henry King",
+      "status": "In Transit"
+    },
+    {
+      "id": 46,
+      "date": "2025-12-22",
+      "model": "Panamera Turbo",
+      "year": 2022,
+      "price": 136000.0,
+      "mileage": 18400,
+      "payment": "Credit Card",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "seller": "Amber Clark",
+      "status": "Delivered"
+    },
+    {
+      "id": 47,
+      "date": "INVALID",
+      "model": "911 GT3 RS",
+      "year": 2024,
+      "price": 286500.0,
+      "mileage": 700,
+      "payment": "Wire Transfer",
+      "city": "Arlington",
+      "state": "TX",
+      "seller": "Peter Lane",
+      "status": "Pending"
+    },
+    {
+      "id": 48,
+      "date": "2026-01-08",
+      "model": "Cayenne E-Hybrid",
+      "year": 2023,
+      "price": 92800.0,
+      "mileage": 15000,
+      "payment": "Lease",
+      "city": "Bakersfield",
+      "state": "CA",
+      "seller": "Grace Morris",
+      "status": "Delivered"
+    },
+    {
+      "id": 49,
+      "date": "2026-01-15",
+      "model": "Macan T",
+      "year": 2022,
+      "price": 72400.0,
+      "mileage": 19750,
+      "payment": "Cash",
+      "city": "Mesa",
+      "state": "AZ",
+      "seller": "Kyle Perry",
+      "status": "Awaiting Pickup"
+    },
+    {
+      "id": 50,
+      "date": "2026-01-28",
+      "model": "Taycan Turbo",
+      "year": 2025,
+      "price": 158500.0,
+      "mileage": 3200,
+      "payment": "Crypto Payment",
+      "city": "Atlanta",
+      "state": "GA",
+      "seller": "Megan Reed",
+      "status": "Delivered"
+    },
+    {
+      "id": 51,
+      "date": "2026-02-03",
+      "model": "718 Cayman",
+      "year": 2021,
+      "price": 69900.0,
+      "mileage": 27600,
+      "payment": "Bank Transfer",
+      "city": "Long Beach",
+      "state": "CA",
+      "seller": "Carl Simmons",
+      "status": "Pending"
+    },
+    {
+      "id": 52,
+      "date": "INVALID",
+      "model": "911 Targa 4",
+      "year": 2024,
+      "price": 141250.0,
+      "mileage": 2100,
+      "payment": "Financing",
+      "city": "Oakland",
+      "state": "CA",
+      "seller": "Linda Cole",
+      "status": "In Transit"
+    },
+    {
+      "id": 53,
+      "date": "2026-02-19",
+      "model": "Panamera",
+      "year": 2020,
+      "price": 71500.0,
+      "mileage": 52000,
+      "payment": "Wire Transfer",
+      "city": "Tulsa",
+      "state": "OK",
+      "seller": "Martin Brooks",
+      "status": "Delivered"
+    },
+    {
+      "id": 54,
+      "date": "2026-02-25",
+      "model": "Cayenne Turbo",
+      "year": 2023,
+      "price": 146800.0,
+      "mileage": 11300,
+      "payment": "Credit Card",
+      "city": "Wichita",
+      "state": "KS",
+      "seller": "Diana Long",
+      "status": "Pending"
+    },
+    {
+      "id": 55,
+      "date": "2026-03-01",
+      "model": "Macan Electric",
+      "year": 2025,
+      "price": 89700.0,
+      "mileage": 0,
+      "payment": "Lease",
+      "city": "New Orleans",
+      "state": "LA",
+      "seller": "Steve Ross",
+      "status": "Delivered"
+    },
+    {
+      "id": 56,
+      "date": "2026-03-14",
+      "model": "911 Carrera S",
+      "year": 2022,
+      "price": 104600.0,
+      "mileage": 15900,
+      "payment": "Bank Transfer",
+      "city": "Honolulu",
+      "state": "HI",
+      "seller": "Olivia Cruz",
+      "status": "Cancelled"
+    },
+    {
+      "id": 57,
+      "date": "INVALID",
+      "model": "Taycan GTS",
+      "year": 2024,
+      "price": 142000.0,
+      "mileage": 6600,
+      "payment": "Wire Transfer",
+      "city": "Anaheim",
+      "state": "CA",
+      "seller": "Patrick Wood",
+      "status": "Delivered"
+    },
+    {
+      "id": 58,
+      "date": "2026-04-08",
+      "model": "Cayenne",
+      "year": 2021,
+      "price": 78400.0,
+      "mileage": 40250,
+      "payment": "Cash",
+      "city": "Henderson",
+      "state": "NV",
+      "seller": "Karen Stone",
+      "status": "Awaiting Review"
+    },
+    {
+      "id": 59,
+      "date": "INVALID",
+      "model": "718 Spyder RS",
+      "year": 2025,
+      "price": 169000.0,
+      "mileage": 850,
+      "payment": "Financing",
+      "city": "Lexington",
+      "state": "KY",
+      "seller": "Justin Fox",
+      "status": "In Transit"
+    },
+    {
+      "id": 60,
+      "date": "2026-04-21",
+      "model": "911 Dakar",
+      "year": 2024,
+      "price": 268900.0,
+      "mileage": 1400,
+      "payment": "Credit Card",
+      "city": "Riverside",
+      "state": "CA",
+      "seller": "Betty James",
+      "status": "Delivered"
+    },
+    {
+      "id": 61,
+      "date": "2026-04-29",
+      "model": "Panamera 4",
+      "year": 2023,
+      "price": 101300.0,
+      "mileage": 12700,
+      "payment": "Wire Transfer",
+      "city": "Corpus Christi",
+      "state": "TX",
+      "seller": "Gary Price",
+      "status": "Pending"
+    },
+    {
+      "id": 62,
+      "date": "2026-05-05",
+      "model": "Macan S",
+      "year": 2021,
+      "price": 66750.0,
+      "mileage": 29800,
+      "payment": "Cash",
+      "city": "St. Louis",
+      "state": "MO",
+      "seller": "Maria Green",
+      "status": "Delivered"
+    },
+    {
+      "id": 63,
+      "date": "2026-05-14",
+      "model": "Taycan Cross Turismo",
+      "year": 2024,
+      "price": 127900.0,
+      "mileage": 7500,
+      "payment": "Lease",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "seller": "Harold Young",
+      "status": "In Transit"
+    },
+    {
+      "id": 64,
+      "date": "2026-05-23",
+      "model": "Cayenne Turbo GT",
+      "year": 2025,
+      "price": 200000.0,
+      "mileage": 1950,
+      "payment": "Wire Transfer",
+      "city": "Cincinnati",
+      "state": "OH",
+      "seller": "Teresa Ward",
+      "status": "Delivered"
+    },
+    {
+      "id": 65,
+      "date": "2026-06-02",
+      "model": "911 Carrera Cabriolet",
+      "year": 2023,
+      "price": 132000.0,
+      "mileage": 8800,
+      "payment": "Crypto Payment",
+      "city": "Anchorage",
+      "state": "AK",
+      "seller": "Frank Reed",
+      "status": "Pending Review"
+    },
+    {
+      "id": 66,
+      "date": "2026-06-15",
+      "model": "718 Cayman GT4 RS",
+      "year": 2024,
+      "price": 176400.0,
+      "mileage": 600,
+      "payment": "Credit Card",
+      "city": "Plano",
+      "state": "TX",
+      "seller": "Angela Moore",
+      "status": "Delivered"
+    },
+    {
+      "id": 67,
+      "date": "INVALID",
+      "model": "Panamera 4 E-Hybrid",
+      "year": 2022,
+      "price": 108500.0,
+      "mileage": 16200,
+      "payment": "Bank Transfer",
+      "city": "Newark",
+      "state": "NJ",
+      "seller": "Rachel West",
+      "status": "Cancelled"
+    },
+    {
+      "id": 68,
+      "date": "2026-07-07",
+      "model": "Macan",
+      "year": 2021,
+      "price": 59000.0,
+      "mileage": 36000,
+      "payment": "Financing",
+      "city": "Greensboro",
+      "state": "NC",
+      "seller": "Thomas Fox",
+      "status": "Awaiting Delivery"
+    },
+    {
+      "id": 69,
+      "date": "2026-07-20",
+      "model": "Taycan Turbo S",
+      "year": 2025,
+      "price": 218000.0,
+      "mileage": 0,
+      "payment": "Wire Transfer",
+      "city": "Lincoln",
+      "state": "NE",
+      "seller": "Lisa Dunn",
+      "status": "Pending"
+    },
+    {
+      "id": 70,
+      "date": "INVALID",
+      "model": "Cayenne S",
+      "year": 2024,
+      "price": 99950.0,
+      "mileage": 5300,
+      "payment": "Debit Card",
+      "city": "Jersey City",
+      "state": "NJ",
+      "seller": "Brian Allen",
+      "status": "Delivered"
+    },
+    {
+      "id": 71,
+      "date": "2026-04-08",
+      "model": "911 Carrera GTS",
+      "year": 2024,
+      "price": 121750.0,
+      "mileage": 5872,
+      "payment": "Credit Card",
+      "city": "Chandler",
+      "state": "AZ",
+      "seller": "George Hall",
+      "status": "Delivered"
+    },
+    {
+      "id": 72,
+      "date": "2026-08-18",
+      "model": "718 Boxster GTS",
+      "year": 2023,
+      "price": 91500.0,
+      "mileage": 13300,
+      "payment": "Lease",
+      "city": "Reno",
+      "state": "NV",
+      "seller": "Helen King",
+      "status": "Shipped"
+    },
+    {
+      "id": 73,
+      "date": "2026-08-31",
+      "model": "Panamera Turbo S",
+      "year": 2022,
+      "price": 134000.0,
+      "mileage": 20100,
+      "payment": "Wire Transfer",
+      "city": "Buffalo",
+      "state": "NY",
+      "seller": "Samuel Price",
+      "status": "In Transit"
+    },
+    {
+      "id": 74,
+      "date": "2026-09-09",
+      "model": "Macan GTS",
+      "year": 2024,
+      "price": 96800.0,
+      "mileage": 0,
+      "payment": "ACH Payment",
+      "city": "Durham",
+      "state": "NC",
+      "seller": "Peter Ford",
+      "status": "Delivered"
+    },
+    {
+      "id": 75,
+      "date": "2026-09-17",
+      "model": "Taycan 4S",
+      "year": 2025,
+      "price": 131600.0,
+      "mileage": 2900,
+      "payment": "Wire Transfer",
+      "city": "Laredo",
+      "state": "TX",
+      "seller": "Angela Green",
+      "status": "Pending Approval"
+    },
+    {
+      "id": 76,
+      "date": "2026-09-28",
+      "model": "Cayenne E-Hybrid",
+      "year": 2023,
+      "price": 94300.0,
+      "mileage": 13100,
+      "payment": "Cash",
+      "city": "Madison",
+      "state": "WI",
+      "seller": "Victor Stone",
+      "status": "Delivered"
+    },
+    {
+      "id": 77,
+      "date": "2026-10-06",
+      "model": "911 Turbo S",
+      "year": 2025,
+      "price": 242000.0,
+      "mileage": 1100,
+      "payment": "Crypto Payment",
+      "city": "Lubbock",
+      "state": "TX",
+      "seller": "Rachel Turner",
+      "status": "Awaiting Pickup"
+    },
+    {
+      "id": 78,
+      "date": "2026-10-16",
+      "model": "718 Cayman S",
+      "year": 2022,
+      "price": 82750.0,
+      "mileage": 22500,
+      "payment": "Credit Card",
+      "city": "Toledo",
+      "state": "OH",
+      "seller": "Chris Moore",
+      "status": "Cancelled"
+    },
+    {
+      "id": 79,
+      "date": "2026-10-29",
+      "model": "Macan Electric",
+      "year": 2026,
+      "price": 91300.0,
+      "mileage": 0,
+      "payment": "Wire Transfer",
+      "city": "Irvine",
+      "state": "CA",
+      "seller": "Laura Hill",
+      "status": "Delivered"
+    },
+    {
+      "id": 80,
+      "date": "2026-11-03",
+      "model": "Panamera",
+      "year": 2021,
+      "price": 79900.0,
+      "mileage": 44800,
+      "payment": "Financing",
+      "city": "Garland",
+      "state": "TX",
+      "seller": "Martin Young",
+      "status": "Pending"
+    },
+    {
+      "id": 81,
+      "date": "INVALID",
+      "model": "Cayenne Coupe",
+      "year": 2024,
+      "price": 111000.0,
+      "mileage": 6700,
+      "payment": "Bank Transfer",
+      "city": "Irving",
+      "state": "TX",
+      "seller": "Diana Cooper",
+      "status": "In Transit"
+    },
+    {
+      "id": 82,
+      "date": "2026-12-11",
+      "model": "911 Targa 4S",
+      "year": 2023,
+      "price": 156500.0,
+      "mileage": 4200,
+      "payment": "Cash",
+      "city": "Chesapeake",
+      "state": "VA",
+      "seller": "Steve Gray",
+      "status": "Delivered"
+    },
+    {
+      "id": 83,
+      "date": "2026-12-24",
+      "model": "Taycan",
+      "year": 2025,
+      "price": 119900.0,
+      "mileage": 1250,
+      "payment": "Lease",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "seller": "Olivia Ross",
+      "status": "Pending"
+    },
+    {
+      "id": 84,
+      "date": "INVALID",
+      "model": "Macan T",
+      "year": 2022,
+      "price": 73200.0,
+      "mileage": 18600,
+      "payment": "Wire Transfer",
+      "city": "Norfolk",
+      "state": "VA",
+      "seller": "Patrick Wood",
+      "status": "Delivered"
+    },
+    {
+      "id": 85,
+      "date": "2026-12-28",
+      "model": "911 GT3",
+      "year": 2024,
+      "price": 224000.0,
+      "mileage": 3000,
+      "payment": "Wire Transfer",
+      "city": "Boise",
+      "state": "ID",
+      "seller": "Karen Diaz",
+      "status": "Awaiting Delivery"
+    },
+    {
+      "id": 86,
+      "date": "2027-01-15",
+      "model": "911 Carrera",
+      "year": 2024,
+      "price": 126900.0,
+      "mileage": 7200,
+      "payment": "Credit Card",
+      "city": "Orlando",
+      "state": "FL",
+      "seller": "Kevin Brown",
+      "status": "Delivered"
+    },
+    {
+      "id": 87,
+      "date": "2027-01-29",
+      "model": "Cayenne",
+      "year": 2023,
+      "price": 84500.0,
+      "mileage": 21400,
+      "payment": "Bank Transfer",
+      "city": "San Jose",
+      "state": "CA",
+      "seller": "Amanda Lee",
+      "status": "Pending"
+    },
+    {
+      "id": 88,
+      "date": "2027-02-11",
+      "model": "Macan S",
+      "year": 2022,
+      "price": 69800.0,
+      "mileage": 26300,
+      "payment": "Financing",
+      "city": "Tampa",
+      "state": "FL",
+      "seller": "Brian Hall",
+      "status": "Delivered"
+    },
+    {
+      "id": 89,
+      "date": "INVALID",
+      "model": "Taycan 4S",
+      "year": 2025,
+      "price": 132700.0,
+      "mileage": 0,
+      "payment": "Wire Transfer",
+      "city": "Denver",
+      "state": "CO",
+      "seller": "Jessica White",
+      "status": "In Transit"
+    },
+    {
+      "id": 90,
+      "date": "2027-03-05",
+      "model": "Panamera",
+      "year": 2021,
+      "price": 81000.0,
+      "mileage": 42,
+      "payment": "Cash",
+      "city": "Austin",
+      "state": "TX",
+      "seller": "Thomas King",
+      "status": "Delivered"
+    },
+    {
+      "id": 91,
+      "date": "2027-03-18",
+      "model": "718 Cayman",
+      "year": 2023,
+      "price": 78900.0,
+      "mileage": 17500,
+      "payment": "Debit Card",
+      "city": "Seattle",
+      "state": "WA",
+      "seller": "Victor Lee",
+      "status": "Cancelled"
+    },
+    {
+      "id": 92,
+      "date": "2027-04-02",
+      "model": "911 Turbo S",
+      "year": 2026,
+      "price": 249300.0,
+      "mileage": 900,
+      "payment": "Wire Transfer",
+      "city": "Boston",
+      "state": "MA",
+      "seller": "Monica Green",
+      "status": "Awaiting Delivery"
+    },
+    {
+      "id": 93,
+      "date": "INVALID",
+      "model": "Cayenne Coupe",
+      "year": 2024,
+      "price": 108750.0,
+      "mileage": 5530,
+      "payment": "Wire Transfer",
+      "city": "Phoenix",
+      "state": "AZ",
+      "seller": "Gregory Adams",
+      "status": "Pending Approval"
+    },
+    {
+      "id": 94,
+      "date": "INVALID",
+      "model": "Macan Electric",
+      "year": 2026,
+      "price": 92600.0,
+      "mileage": 0,
+      "payment": "Financing",
+      "city": "Chicago",
+      "state": "IL",
+      "seller": "Laura West",
+      "status": "Shipped"
+    },
+    {
+      "id": 95,
+      "date": "2027-05-12",
+      "model": "Taycan Turbo",
+      "year": 2025,
+      "price": 164000.0,
+      "mileage": 0,
+      "payment": "ACH Payment",
+      "city": "Dallas",
+      "state": "TX",
+      "seller": "Henry King",
+      "status": "In Transit"
+    },
+    {
+      "id": 96,
+      "date": "2027-05-27",
+      "model": "Panamera 4S",
+      "year": 2024,
+      "price": 119000.0,
+      "mileage": 13400,
+      "payment": "Credit Card",
+      "city": "San Francisco",
+      "state": "CA",
+      "seller": "Amber Clark",
+      "status": "Delivered"
+    },
+    {
+      "id": 97,
+      "date": "INVALID",
+      "model": "911 GT3",
+      "year": 2026,
+      "price": 232500.0,
+      "mileage": 1700,
+      "payment": "Wire Transfer",
+      "city": "Las Vegas",
+      "state": "NV",
+      "seller": "Peter Lane",
+      "status": "Pending"
+    },
+    {
+      "id": 98,
+      "date": "2027-06-18",
+      "model": "Cayenne E-Hybrid",
+      "year": 2023,
+      "price": 96800.0,
+      "mileage": 14000,
+      "payment": "Lease",
+      "city": "Charlotte",
+      "state": "NC",
+      "seller": "Grace Morris",
+      "status": "Delivered"
+    },
+    {
+      "id": 99,
+      "date": "2027-07-03",
+      "model": "Macan T",
+      "year": 2022,
+      "price": 74400.0,
+      "mileage": 20750,
+      "payment": "Cash",
+      "city": "Mesa",
+      "state": "AZ",
+      "seller": "Kyle Perry",
+      "status": "Awaiting Pickup"
+    },
+    {
+      "id": 100,
+      "date": "2027-07-22",
+      "model": "Taycan GTS",
+      "year": 2025,
+      "price": 148500.0,
+      "mileage": 5200,
+      "payment": "Crypto Payment",
+      "city": "Atlanta",
+      "state": "GA",
+      "seller": "Megan Reed",
+      "status": "Delivered"
+    },
+    {
+      "id": 101,
+      "date": "2027-08-08",
+      "model": "718 Boxster",
+      "year": 2021,
+      "price": 71900.0,
+      "mileage": 29600,
+      "payment": "Bank Transfer",
+      "city": "Long Beach",
+      "state": "CA",
+      "seller": "Carl Simmons",
+      "status": "Pending"
+    },
+    {
+      "id": 102,
+      "date": "INVALID",
+      "model": "911 Targa 4",
+      "year": 2024,
+      "price": 143250.0,
+      "mileage": 3100,
+      "payment": "Financing",
+      "city": "Oakland",
+      "state": "CA",
+      "seller": "Linda Cole",
+      "status": "In Transit"
+    },
+    {
+      "id": 103,
+      "date": "2027-09-19",
+      "model": "Panamera Turbo",
+      "year": 2020,
+      "price": 137500.0,
+      "mileage": 48000,
+      "payment": "Wire Transfer",
+      "city": "Tulsa",
+      "state": "OK",
+      "seller": "Martin Brooks",
+      "status": "Delivered"
+    },
+    {
+      "id": 104,
+      "date": "2027-09-25",
+      "model": "Cayenne Turbo GT",
+      "year": 2025,
+      "price": 204800.0,
+      "mileage": 3300,
+      "payment": "Credit Card",
+      "city": "Wichita",
+      "state": "KS",
+      "seller": "Diana Long",
+      "status": "Pending"
+    },
+    {
+      "id": 105,
+      "date": "2027-10-01",
+      "model": "911 Dakar",
+      "year": 2024,
+      "price": 271700.0,
+      "mileage": 1050,
+      "payment": "Lease",
+      "city": "New Orleans",
+      "state": "LA",
+      "seller": "Steve Ross",
+      "status": "Delivered"
+    }
+  ],
+  "quarterly": [
+    {
+      "q": "2024Q1",
+      "revenue": 235000.0,
+      "units": 1
+    },
+    {
+      "q": "2024Q2",
+      "revenue": 365750.0,
+      "units": 3
+    },
+    {
+      "q": "2024Q3",
+      "revenue": 522500.5,
+      "units": 5
+    },
+    {
+      "q": "2024Q4",
+      "revenue": 315800.0,
+      "units": 2
+    },
+    {
+      "q": "2025Q1",
+      "revenue": 482150.0,
+      "units": 5
+    },
+    {
+      "q": "2025Q2",
+      "revenue": 302300.0,
+      "units": 3
+    },
+    {
+      "q": "2025Q3",
+      "revenue": 623350.0,
+      "units": 5
+    },
+    {
+      "q": "2025Q4",
+      "revenue": 759700.0,
+      "units": 6
+    },
+    {
+      "q": "2026Q1",
+      "revenue": 806200.0,
+      "units": 8
+    },
+    {
+      "q": "2026Q2",
+      "revenue": 1273400.0,
+      "units": 9
+    },
+    {
+      "q": "2026Q3",
+      "revenue": 825200.0,
+      "units": 7
+    },
+    {
+      "q": "2026Q4",
+      "revenue": 996350.0,
+      "units": 7
+    },
+    {
+      "q": "2027Q1",
+      "revenue": 441100.0,
+      "units": 5
+    },
+    {
+      "q": "2027Q2",
+      "revenue": 629100.0,
+      "units": 4
+    },
+    {
+      "q": "2027Q3",
+      "revenue": 637100.0,
+      "units": 5
+    },
+    {
+      "q": "2027Q4",
+      "revenue": 271700.0,
+      "units": 1
+    }
+  ]
+}
