@@ -1,6 +1,6 @@
 # Porsche Sales Intelligence — Relatório Executivo de Vendas
 
-Dashboard analítico de performance comercial: indicadores, comparativos, tendências e insights para apoio à decisão da diretoria.
+Dashboard analítico de performance comercial: indicadores, comparativos, tendências e insights para apoio à decisão da diretoria. (dados ficticios para curso da DIO)
 
 ![Preview do dashboard](preview.png)
 
